@@ -1,0 +1,163 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    /* font-family: 'Playfair Display', serif; */
+    color: var(--textPrimary);
+    letter-spacing: 1px;
+
+}
+
+p,
+a,
+li {
+    /* font-family: 'Montserrat', sans-serif; */
+    color: var(--textPrimary);
+    /* word-spacing: 1px; */
+    letter-spacing: 0.3px;
+}
+
+a,
+li {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+button,
+input {
+    background-color: transparent;
+    border: none;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-responsive {
+    display: flex;
+}
+
+.image>img {
+    width: 100%;
+}
+
+.flex-reverse {
+    flex-direction: row-reverse;
+}
+
+body .container {
+    max-width: 1100px;
+    position: relative;
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: calc(var(--bs-gutter-x)*.5) !important;
+    padding-right: calc(var(--bs-gutter-x)*.5) !important;
+    width: 100%;
+}
+
+.main-section {
+    padding: 60px 0;
+}
+
+@media (max-width: 1400px) {
+    body .container {
+        max-width: 1200px;
+    }
+}
+
+@media (max-width: 1200px) {
+    body .container {
+        max-width: 1000px;
+    }
+
+    .main-section {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 992px) {
+    body .container {
+        max-width: 912px;
+    }
+
+    .main-section {
+        padding: 50px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .flex-responsive {
+        flex-direction: column;
+    }
+
+    body .container {
+        max-width: 720px;
+    }
+
+    .main-section {
+        padding: 40px 0;
+    }
+}
+
+@media (max-width: 576px) {
+    body .container {
+        max-width: 540px;
+    }
+
+    .main-section {
+        padding: 30px 0;
+    }
+}
+
+.show-laptop,
+.show-tablet,
+.show-mobile {
+    display: none;
+}
+
+@media (max-width: 992px) {
+    .hide-laptop {
+        display: none;
+    }
+
+    .show-laptop {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .hide-tablet {
+        display: none !important;
+    }
+
+    .show-tablet {
+        display: block !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .show-mobile {
+        display: block;
+    }
+
+    .hide-mobile {
+        display: none;
+    }
+}
