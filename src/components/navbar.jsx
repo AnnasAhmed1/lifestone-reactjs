@@ -21,7 +21,6 @@ const Navbar = ({ white = false }) => {
     };
   }, []);
   const handleScroll = () => {
-    // Check if the scroll position is greater than 100 pixels (adjust as needed)
     if (!white) {
       const scrollPosition = window.scrollY;
       if (scrollPosition > 100) {
@@ -98,6 +97,34 @@ const Navbar = ({ white = false }) => {
     // }
     console.log(open);
   };
+
+  const navs = [
+    {
+      label: "HOME",
+      to: "/",
+      navDetail: false,
+    },
+    {
+      label: "ABOUT US",
+      to: "/about",
+      navDetail: false,
+    },
+    {
+      label: "PORTFOLIO",
+      to: "/portfolio",
+      navDetail: false,
+    },
+    {
+      label: "CONTACT US",
+      to: "/contact",
+      navDetail: false,
+    },
+    {
+      label: "FAQ",
+      to: "/faq",
+      navDetail: false,
+    },
+  ];
   return (
     <>
       <nav className={`navbar ${!isScrolled ? "white-nav" : null}`}>
@@ -113,54 +140,20 @@ const Navbar = ({ white = false }) => {
         <div className="navs-container">
           <h1>Lifesstonic</h1>
           <ul>
-            <li
-              className="helper-p5"
-              onClick={() => {
-                handleNavDetail("THINGS TO DO", things);
-              }}
-            >
-              <Link to={"/"}>HOME</Link>
-              {/* <CaretDownOutlined /> */}
-            </li>
-            <li
-              className="helper-p6"
-              onClick={() => {
-                handleNavDetail("Events", events);
-              }}
-            >
-              <Link to={"/about"}>ABOUT US</Link>
-              {/* <CaretDownOutlined /> */}
-            </li>
-            <li
-              className="helper-p6"
-              onClick={() => {
-                handleNavDetail("Hotels & Deals", hotels);
-              }}
-            >
-              <Link to={"/portfolio"}>PORTFOLIO</Link>
-              {/* <CaretDownOutlined /> */}
-            </li>
-            <li className="helper-p6">
-              <Link to={"/contact"}>CONTACT US</Link>
-            </li>
-            <li
-              className="helper-p6"
-              onClick={() => {
-                handleNavDetail("Plan Your Trip", trip);
-              }}
-            >
-              <Link to={"/faq"}>FAQ</Link>
-              {/* <CaretDownOutlined /> */}
-            </li>
-            {/* <li
-              className="helper-p6"
-              onClick={() => {
-                handleNavDetail("Love + Grit", grit);
-              }}
-            >
-              LOVE + GRIT
-              <CaretDownOutlined />
-            </li> */}
+            {navs?.map((nav, index) => {
+              return (
+                <li
+                  key={index}
+                  className="helper-p5"
+                  onClick={() => {
+                    handleNavDetail("THINGS TO DO", things);
+                  }}
+                >
+                  <Link to={nav.to}>{nav.label}</Link>
+                  {/* <CaretDownOutlined /> */}
+                </li>
+              );
+            })}
           </ul>
           <ButtonComp text="UWISHUNU" />
           <button className="icon-button">

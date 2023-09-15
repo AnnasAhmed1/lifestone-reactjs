@@ -29,6 +29,7 @@ const TestimonialSlider = () => {
           padding: "5px",
           borderRadius: "50%",
           zIndex: "1",
+          cursor: "pointer",
         }}
         className="custom-arrow custom-prev-arrow"
         onClick={onClick}
@@ -54,6 +55,7 @@ const TestimonialSlider = () => {
           alignItems: "center",
           padding: "5px",
           borderRadius: "50%",
+          cursor: "pointer",
         }}
         className="custom-arrow custom-next-arrow"
         onClick={onClick}

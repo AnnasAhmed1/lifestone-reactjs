@@ -5,6 +5,7 @@ import "../styles/pages/home.css";
 import SimpleSlider from "../components/productSlider";
 import IconDetail from "../components/iconDetail";
 import TestimonialSlider from "../components/testimonialSlider";
+import Footer from "../components/footer";
 
 const Home = () => {
   const [opacity, setOpacity] = useState(1);
@@ -58,7 +59,12 @@ const Home = () => {
   return (
     <main className="home-main">
       <Navbar />
-      <section className="home-head">
+      <section
+        style={{
+          zIndex: "-1",
+        }}
+        className="home-head"
+      >
         <div className="container/ main-section">
           <div style={{ opacity }} className="subheading">
             <div class="horizontal-line"></div>
@@ -86,7 +92,7 @@ const Home = () => {
             style={{
               letterSpacing: "1.6px",
               marginTop: "20px",
-              opacity
+              opacity,
             }}
           />
         </div>
@@ -113,9 +119,7 @@ const Home = () => {
         <br />
         <TestimonialSlider />
       </section>
-      <br />
-      <br />
-      <br />
+      <Footer />
     </main>
   );
 };
