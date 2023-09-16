@@ -19,9 +19,6 @@ const Contact = () => {
   const showModal = () => {
     setIsModalOpen(true);
   };
-  const handleOk = () => {
-    setIsModalOpen(false);
-  };
   const handleCancel = () => {
     setIsModalOpen(false);
   };
@@ -71,7 +68,6 @@ const Contact = () => {
 
       <Modal
         centered
-        // title="Basic Modal"
         open={isModalOpen}
         onCancel={handleCancel}
         footer={false}
@@ -94,7 +90,9 @@ const Contact = () => {
               ref={form}
               className="helper-p4"
               onSubmit={(e) => {
-                sendEmail(e);
+                if (email.length && name.length && description.length) {
+                  sendEmail(e);
+                }
               }}
             >
               <p>
@@ -104,6 +102,7 @@ const Contact = () => {
                   name="name"
                   placeholder="your name here"
                   value={name}
+                  required
                   onChange={(e) => {
                     handleInput(setName, e.target.value);
                   }}
@@ -112,6 +111,7 @@ const Contact = () => {
               <p>
                 and i'm looking for a team to help me with
                 <textarea
+                  required
                   name="description"
                   id=""
                   placeholder="short project description"
@@ -128,31 +128,16 @@ const Contact = () => {
                   placeholder="your email address"
                   name="email"
                   id=""
+                  required
                   value={email}
                   onChange={(e) => {
                     handleInput(setEmail, e.target.value);
                   }}
                 />
               </p>
-              <button
-                style={{
-                  width: "120px",
-                  height: "50px",
-                  textAlign: "center",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
+              <button style={{}}>
                 {loading ? (
-                  <Spin
-                    indicator={<LoadingOutlined spin />}
-                    style={
-                      {
-                        // color: "var(--textPrimary)",
-                      }
-                    }
-                  />
+                  <Spin indicator={<LoadingOutlined spin />} />
                 ) : (
                   "Send"
                 )}
