@@ -10,7 +10,6 @@ import About from "./pages/about";
 import Contact from "./pages/contact";
 import Portfolio from "./pages/portfolio";
 import Faq from "./pages/faq";
-import { useEffect } from "react";
 function App() {
   return (
     <Routes>
