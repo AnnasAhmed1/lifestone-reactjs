@@ -1,59 +1,84 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
+import "../styles/pages/portfolio.css";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-import { EffectCoverflow, Pagination } from "swiper/modules";
+import "swiper/css/navigation";
 
-export default function SwiperCoverflow() {
+import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
+import {
+  CaretRightOutlined,
+  CaretLeftOutlined,
+  FlagFilled,
+} from "@ant-design/icons";
+import slide_image_1 from "../assets/images/img_1.jpeg";
+import slide_image_2 from "../assets/images/img_2.jpeg";
+import slide_image_3 from "../assets/images/img_3.jpeg";
+import slide_image_4 from "../assets/images/img_4.jpeg";
+import slide_image_5 from "../assets/images/img_5.jpeg";
+// import slide_image_6 from './assets/images/img_6.jpg';
+// import slide_image_7 from './assets/images/img_7.jpg';
+
+function PortfolioSlider() {
   return (
-    <div className="App">
+    <div className="container/">
+      <h1 className="heading">Flower Gallery</h1>
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
+        loop={true}
         slidesPerView={"auto"}
         coverflowEffect={{
-          rotate: 50,
+          rotate: 0,
           stretch: 0,
           depth: 100,
-          modifier: 1,
-          slideShadows: true,
+          modifier: 2.5,
         }}
-        pagination={true}
-        modules={[EffectCoverflow, Pagination]}
-        className="mySwiper"
+        pagination={{ el: ".swiper-pagination", clickable: true }}
+        navigation={{
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+          clickable: true,
+        }}
+        modules={[EffectCoverflow, Pagination, Navigation]}
+        className="swiper_container"
       >
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+          <img src={slide_image_1} alt="slide_image" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+          <img src={slide_image_2} alt="slide_image" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+          <img src={slide_image_3} alt="slide_image" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+          <img src={slide_image_4} alt="slide_image" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+          <img src={slide_image_5} alt="slide_image" />
+        </SwiperSlide>
+        {/* <SwiperSlide>
+          <img src={slide_image_6} alt="slide_image" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-        </SwiperSlide>
+          <img src={slide_image_7} alt="slide_image" />
+        </SwiperSlide> */}
+
+        <div className="slider-controler">
+          <div className="swiper-button-prev slider-arrow">
+            <CaretLeftOutlined />
+          </div>
+          <div className="swiper-button-next slider-arrow">
+            <CaretRightOutlined />
+          </div>
+          <div className="swiper-pagination"></div>
+        </div>
       </Swiper>
     </div>
   );
 }
+
+export default PortfolioSlider;

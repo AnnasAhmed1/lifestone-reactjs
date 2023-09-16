@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 const Navbar = ({ white = false }) => {
   const [isScrolled, setIsScrolled] = useState(white);
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("home");
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     window.scrollTo(0, 0);
@@ -96,6 +97,9 @@ const Navbar = ({ white = false }) => {
     //   setOpen(true);
     // }
     console.log(open);
+  };
+  const handleNavActive = (nav) => {
+    setActive(nav);
   };
 
   const navs = [

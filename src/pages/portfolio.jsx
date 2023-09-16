@@ -12,7 +12,7 @@ const Portfolio = () => {
           width: "100%",
         }}
       ></div>
-      <section className="main-section container">
+      <section className="main-section container/">
         <PortfolioSlider />
       </section>
     </main>

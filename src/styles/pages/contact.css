@@ -1,0 +1,124 @@
+.contact-main {
+    background-image: url('../../assets/con_bg.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.contact-main>div:nth-child(3) {
+    /* border: 1px solid red; */
+
+
+}
+
+.contact-main h5 {
+    color: #A6A4A6;
+    line-height: 48px;
+
+}
+
+.contact-main h5>span {
+    color: var(--textPrimary);
+    padding-left: 20px;
+}
+
+.contact-main .contact-section {
+    width: 80%;
+    margin: 0 auto;
+
+    display: flex;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    /* align-items: center; */
+}
+
+.contact-main .contact-section form {
+    padding: 8% 10%;
+    background-color: #E7E8EC;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contact-main .contact-section form input,
+.contact-main .contact-section form textarea {
+    border: none;
+    background-color: transparent;
+    resize: none;
+    padding: 0 10px;
+    border-bottom: 1px solid #bdbdbd;
+    width: 100%;
+    display: block;
+    font-size: 16px;
+
+
+}
+
+.contact-main .contact-section form input:focus,
+.contact-main .contact-section form textarea:focus {
+    outline: none;
+    border-bottom: 1px solid var(--dark);
+}
+
+.contact-main .contact-section form p {
+    display: flex;
+}
+
+.contact-main .contact-section form p input {
+    flex: 1;
+}
+
+.contact-main .contact-section form p:nth-child(2) {
+    flex-direction: column;
+}
+
+.contact-main .contact-section form textarea {
+    padding: 0px;
+    padding-bottom: 50px;
+    padding-top: 10px;
+    width: 100%;
+
+}
+
+.contact-main .contact-section form button {
+    text-align: right;
+    font-size: 24px;
+    font-weight: 600;
+    width: fit-content;
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    transition: all .5s ease;
+    display: block;
+    margin-left: auto;
+    border-radius: 10px;
+
+}
+
+.contact-main .contact-section form button:hover {
+    background-color: var(--dark);
+    border: 1px solid var(--dark);
+    color: var(--light);
+
+}
+
+.contact-main .contact-section>div {
+    background-image: url('../../assets/contact_bg.jpeg');
+    width: 40%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-right: 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    /* height: max-content; */
+
+}
+
+.contact-main .contact-section>div p {
+    color: var(--light);
+    background: var(--textPrimary);
+    width: fit-content;
+    margin-left: -12px;
+    padding: 12px 20px;
+}
