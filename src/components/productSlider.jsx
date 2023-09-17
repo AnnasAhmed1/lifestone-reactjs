@@ -94,7 +94,7 @@ const SimpleSlider = () => {
     <div className="productSlider">
       <Slider {...settings}>
         {products.map((product, index) => {
-          return <ProductCard bgImage={product.image} />;
+          return <ProductCard key={index} bgImage={product.image} />;
         })}
       </Slider>
     </div>

@@ -67,7 +67,7 @@ const Home = () => {
       >
         <div className="container/ main-section">
           <div style={{ opacity }} className="subheading">
-            <div class="horizontal-line"></div>
+            <div className="horizontal-line"></div>
             <H4
               text="Welcome To"
               color="light"
@@ -76,7 +76,7 @@ const Home = () => {
                 letterSpacing: "4.6px",
               }}
             />
-            <div class="horizontal-line"></div>
+            <div className="horizontal-line"></div>
           </div>
           <H1
             // text="Offering High Quality, Custom Designed, and Environmentally Friendly Stone Art, Restoration Services, and Training."

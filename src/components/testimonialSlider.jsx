@@ -86,6 +86,7 @@ const TestimonialSlider = () => {
         {testimonials?.map((testimonial, index) => {
           return (
             <TestimonialCard
+              key={index}
               image={testimonial.image}
               active={index === activeSLide}
             />
