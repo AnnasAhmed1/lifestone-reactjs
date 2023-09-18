@@ -61,12 +61,18 @@
     height: 200px;
     border-radius: 20px;
     padding: 16px 16px;
-    border: 1px solid #dbdbdb;
+    /* border: 1px solid #dbdbdb; */
+    border: 1px solid var(--textPrimary);
     /* background-color: #eeeeee; */
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
+    cursor: pointer;
+}
+
+.home-main .product-container .home-product-card:hover {
+    background-color: transparent;
 }
 
 .container1::before {

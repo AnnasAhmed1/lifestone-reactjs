@@ -103,7 +103,7 @@ const Home = () => {
             style={{ opacity }}
           />
           <H4
-            text="Offering High Quality, Custom Designed, and Environmentally Friendly Stone Art, Restoration Services, and Training. "
+            text="Discover Your Stone Journey with Lifestone Architects, Fabricators, Homeowners, Contractors, Enterpreneurs - Lifestone has something for everyone in the world of stone."
             color="light"
             center
             style={{

@@ -12,6 +12,7 @@ const Navbar = ({ white = false }) => {
   const [isScrolled, setIsScrolled] = useState(white);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("home");
+  const [inputActive, setInputActive] = useState(false);
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     window.scrollTo(0, 0);
@@ -160,9 +161,27 @@ const Navbar = ({ white = false }) => {
             })}
           </ul>
           <ButtonComp text="Login" />
-          <button className="icon-button">
-            <SearchOutlined />
-          </button>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+            }}
+            className="navbar-form"
+          >
+            <input
+              type="text"
+              placeholder="Search"
+              placeholderColor="#ffffff"
+              className={`${inputActive ? "input-active" : null}`}
+            />
+            <button
+              onClick={() => {
+                setInputActive(!inputActive);
+              }}
+              className="icon-button"
+            >
+              <SearchOutlined />
+            </button>
+          </form>
         </div>
 
         <div className={`nav-detail main-section ${open ? "visible" : null}`}>

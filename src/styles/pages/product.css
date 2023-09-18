@@ -1,0 +1,13 @@
+/* .ant-tabs-tab-active {
+    border-bottom: red !important;
+}
+
+.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: var(--primary) !important;
+    text-decoration: underline;
+
+} */
+
+.ant-tabs-tab {
+    font-size: 18px !important;
+}
