@@ -3,6 +3,7 @@ import Navbar from "../components/navbar";
 import { H2, H5 } from "../helper/heading";
 import "../styles/pages/about.css";
 import { P3 } from "../helper/paragraph";
+import Footer from "../components/footer";
 
 const About = () => {
   return (
@@ -11,7 +12,7 @@ const About = () => {
 
       <div
         style={{
-          minHeight: "100px",
+          minHeight: "73px",
           width: "100%",
         }}
       ></div>
@@ -79,6 +80,7 @@ const About = () => {
           <img src={require("../assets/leaf_about.jpeg")} alt="" />
         </div>
       </section>
+      <Footer />
     </main>
   );
 };

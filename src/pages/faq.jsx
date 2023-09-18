@@ -4,6 +4,7 @@ import "../styles/pages/faq.css";
 import { H2, H3, H4 } from "../helper/heading";
 import { P3 } from "../helper/paragraph";
 import { PlusOutlined, MinusOutlined } from "@ant-design/icons";
+import Footer from "../components/footer";
 
 const Faq = () => {
   const categories = [
@@ -147,7 +148,7 @@ const Faq = () => {
 
       <div
         style={{
-          minHeight: "100px",
+          minHeight: "73px",
           width: "100%",
         }}
       ></div>
@@ -206,6 +207,7 @@ const Faq = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </main>
   );
 };

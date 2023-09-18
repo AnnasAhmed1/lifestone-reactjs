@@ -10,13 +10,15 @@ import About from "./pages/about";
 import Contact from "./pages/contact";
 import Portfolio from "./pages/portfolio";
 import Faq from "./pages/faq";
+import Products from "./pages/products";
 function App() {
   return (
     <Routes>
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
       <Route path="contact" element={<Contact />} />
-      <Route path="portfolio" element={<Portfolio />} />
+      {/* <Route path="portfolio" element={<Portfolio />} /> */}
+      <Route path="products" element={<Products />} />
       <Route path="faq" element={<Faq />} />
       {/* <Route path="*" element={<NotFound />} /> */}
     </Routes>

@@ -50,6 +50,23 @@ const Home = () => {
 
     setOpacity(calculatedOpacity);
   };
+  const products = [
+    {
+      title: "For Fabricators",
+    },
+    {
+      title: "For Architects",
+    },
+    {
+      title: "For Homeowners",
+    },
+    {
+      title: "For Enterpreneurs",
+    },
+    {
+      title: "For Contractors",
+    },
+  ];
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -100,9 +117,18 @@ const Home = () => {
       <section className="main-section container">
         <H2 text="Our Products" />
         <br />
-        <SimpleSlider />
+        <div className="product-container">
+          {products?.map((product, index) => {
+            return (
+              <div className="home-product-card container1" key={index}>
+                <H3 center text={product.title} />
+              </div>
+            );
+          })}
+        </div>
+        {/* <SimpleSlider /> */}
       </section>
-      <section
+      {/* <section
         style={{
           backgroundColor: "#F5F5F5",
         }}
@@ -113,11 +139,18 @@ const Home = () => {
             return <IconDetail key={i} image={v.image} heading={v.heading} />;
           })}
         </div>
-      </section>
-      <section className="main-section container">
-        <H2 text="What Clients Say" />
-        <br />
-        <TestimonialSlider />
+      </section> */}
+      <section
+        style={{
+          backgroundColor: "#F5F5F5",
+        }}
+        className="main-section"
+      >
+        <div className="container">
+          <H2 text="What Clients Say" />
+          <br />
+          <TestimonialSlider />
+        </div>
       </section>
       <Footer />
     </main>

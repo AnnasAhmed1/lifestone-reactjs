@@ -9,7 +9,7 @@ const Portfolio = () => {
 
       <div
         style={{
-          minHeight: "100px",
+          minHeight: "73px",
           width: "100%",
         }}
       ></div>

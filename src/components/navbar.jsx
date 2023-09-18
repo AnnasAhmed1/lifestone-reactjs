@@ -114,8 +114,8 @@ const Navbar = ({ white = false }) => {
       navDetail: false,
     },
     {
-      label: "PORTFOLIO",
-      to: "/portfolio",
+      label: "PRODUCTS",
+      to: "/products",
       navDetail: false,
     },
     {
@@ -132,7 +132,7 @@ const Navbar = ({ white = false }) => {
   return (
     <>
       <nav className={`navbar ${!isScrolled ? "white-nav" : null}`}>
-        <ul>
+        {/* <ul>
           <li>Media</li>
           <li className="circle"></li>
           <li> Meetings</li>
@@ -140,7 +140,7 @@ const Navbar = ({ white = false }) => {
           <li>visitPA.com</li>
           <li className="circle"></li>
           <li>Hospitality Jobs</li>
-        </ul>
+        </ul> */}
         <div className="navs-container">
           <h1>Lifesstonic</h1>
           <ul>
@@ -159,7 +159,7 @@ const Navbar = ({ white = false }) => {
               );
             })}
           </ul>
-          <ButtonComp text="UWISHUNU" />
+          <ButtonComp text="Login" />
           <button className="icon-button">
             <SearchOutlined />
           </button>
