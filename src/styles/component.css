@@ -19,18 +19,24 @@
 
 .navbar .navbar-form input {
     width: 0px;
-    padding: 5px;
+    padding: 5px 0px;
     color: var(--light);
-    transition: all 0.75s ease;
+    transition: width 0.75s ease;
+    border-bottom: 1px solid var(--dark);
 }
 
-.navbar .navbar-form input::placeholder {
+.white-nav .navbar-form input::placeholder {
     color: var(--light);
 }
 
 .navbar .navbar-form .input-active {
     margin: 0 10px;
     width: 150px;
+    padding: 5px;
+
+}
+
+.white-nav .navbar-form input {
     border-bottom: 1px solid var(--light);
 }
 

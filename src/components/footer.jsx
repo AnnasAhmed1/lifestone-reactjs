@@ -15,8 +15,8 @@ const Footer = () => {
       navDetail: false,
     },
     {
-      label: "PORTFOLIO",
-      to: "/portfolio",
+      label: "PRODUCTS",
+      to: "/products",
       navDetail: false,
     },
     {
