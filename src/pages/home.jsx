@@ -121,7 +121,7 @@ const Home = () => {
           {products?.map((product, index) => {
             return (
               <div className="home-product-card container1" key={index}>
-                <H3 center text={product.title} />
+                <H4 center text={product.title} />
               </div>
             );
           })}

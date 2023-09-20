@@ -105,11 +105,17 @@ const Products = () => {
       ></div>
       <section className="main-section container">
         <Tabs
+          centered
           inkBarColor={"#000000"}
           itemActiveColor={"#000000"}
           defaultActiveKey="1"
           items={items}
           onChange={onChange}
+          tabBarStyle={
+            {
+              // border: "1px solid red",
+            }
+          }
         />
       </section>
       <Footer />
