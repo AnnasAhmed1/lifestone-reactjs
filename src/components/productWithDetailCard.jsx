@@ -1,12 +1,12 @@
 import React from "react";
-import { H3 } from "../helper/heading";
+import { H3, H4 } from "../helper/heading";
 import { P4 } from "../helper/paragraph";
 
 const ProductWithDetailCard = ({
-  image,
   title,
   description,
   reverse = false,
+  subTitle,
 }) => {
   return (
     <div
@@ -15,24 +15,40 @@ const ProductWithDetailCard = ({
       }}
       className="productWithDetailCard"
     >
-      <div>
-        <img
-          style={{
-            borderRadius: reverse ? "0px 20px 20px 0px" : "20px 0px 0px 20px",
-          }}
+      <div
+        style={{
+          borderRadius: reverse ? "0px 20px 20px 0px" : "20px 0px 0px 20px",
+          borderRight: !reverse ? "1px solid #dbdbdb" : null,
+          borderLeft: reverse ? "1px solid #dbdbdb" : null,
+          backgroundColor: "var(--bgLight)",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <H3 text={title} center />
+        <H4 text={subTitle} fontWeight="500" center />
+
+        {/* <img
+          
           src={require(`../assets/${image}`)}
           alt={title}
-        />
+        /> */}
       </div>
       <div
         style={{
           borderRadius: !reverse ? "0px 20px 20px 0px" : "20px 0px 0px 20px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
         }}
       >
-        <H3 text={title} />
         <P4
-          color="textLight"
-          text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, ut? Aliquam doloremque perspiciatis tempore necessitatibus assumenda! Est atque hic natus, iusto molestiae, dolore quos, doloribus quis quaerat ratione quibusdam deserunt delectus vel ad ducimus optio culpa libero. Ullam deserunt enim provident."
+          text={description}
+          style={{
+            color: "#878585",
+          }}
         />
       </div>
     </div>
