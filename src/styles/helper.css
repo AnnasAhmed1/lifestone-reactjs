@@ -63,3 +63,166 @@
 .helper-button-thin {
     padding: 4px 16px;
 }
+
+
+@media (max-width: 992px) {
+    .helper-h1 {
+        font-size: 62px;
+        line-height: 80px;
+    }
+
+    .helper-h2 {
+        font-size: 34px;
+        line-height: 44px;
+    }
+
+    .helper-h5 {
+        font-size: 43px;
+        line-height: 55px;
+    }
+
+    .helper-h6 {
+        font-size: 22px;
+        line-height: 32px;
+    }
+
+    .helper-p3 {
+        font-size: 15px;
+        line-height: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .helper-h1 {
+        font-size: 54px;
+        line-height: 72px;
+    }
+
+    .helper-h2 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    .helper-h3 {
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .helper-h4 {
+        font-size: 15px;
+        line-height: 25px;
+    }
+
+    .helper-h5 {
+        font-size: 38px;
+        line-height: 48px;
+    }
+
+    .helper-h6 {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .helper-p1 {
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .helper-p2 {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .helper-p3 {
+        font-size: 15px;
+        line-height: 25px;
+    }
+
+    .helper-p4 {
+        font-size: 13px;
+        line-height: 21px;
+    }
+}
+
+@media (max-width: 576px) {
+    .helper-h1 {
+        font-size: 40px;
+        line-height: 56px;
+    }
+
+    .helper-h2 {
+        font-size: 26px;
+        line-height: 36px;
+    }
+
+    .helper-h3 {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .helper-h4 {
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .helper-h5 {
+        font-size: 35px;
+        line-height: 45px;
+    }
+
+    .helper-h6 {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .helper-p1 {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .helper-p2 {
+        font-size: 15px;
+        line-height: 25px;
+    }
+
+    .helper-p3 {
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .helper-p4 {
+        font-size: 12px;
+        line-height: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .helper-button {
+        padding: 8px 12px;
+    }
+
+    .helper-button-thin {
+        padding: 4px 10px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .helper-button {
+        padding: 6px 10px;
+    }
+
+    .helper-button-thin {
+        padding: 3px 8px;
+    }
+}
+
+@media (max-width: 576px) {
+    .helper-button {
+        padding: 3px 8px;
+    }
+
+    .helper-button-thin {
+        padding: 1px 6px;
+    }
+}

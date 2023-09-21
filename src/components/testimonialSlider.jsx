@@ -73,12 +73,18 @@ const TestimonialSlider = () => {
     slidesToScroll: 1,
     focusOnSelect: true,
     centerMode: true,
-    // dots: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
     nextArrow: <CustomNextArrow />,
     prevArrow: <CustomPrevArrow />,
     beforeChange: (current, next) => setActiveSlide(next),
-    // afterChange: (current, next) => setActiveSlide(current),
-    // afterChange: current => this.setState({ activeSlide2: current })
   };
   return (
     <div className="testimonialSlider">

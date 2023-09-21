@@ -1,7 +1,11 @@
-import { Menu } from "antd";
+import { Dropdown, Menu } from "antd";
 import React, { useEffect, useState } from "react";
 import ButtonComp from "../helper/button";
-import { CaretDownOutlined, SearchOutlined } from "@ant-design/icons";
+import {
+  CaretDownOutlined,
+  SearchOutlined,
+  MenuOutlined,
+} from "@ant-design/icons";
 import "../styles/component.css";
 import { H3, H4 } from "../helper/heading";
 import { Link } from "react-router-dom";
@@ -102,7 +106,11 @@ const Navbar = ({ white = false }) => {
   const handleNavActive = (nav) => {
     setActive(nav);
   };
-
+  const [current, setCurrent] = useState("mail");
+  const onClick = (e) => {
+    console.log("click ", e);
+    setCurrent(e.key);
+  };
   const navs = [
     {
       label: "HOME",
@@ -130,6 +138,10 @@ const Navbar = ({ white = false }) => {
       navDetail: false,
     },
   ];
+  const items = [];
+  navs.map((v, i) => {
+    items.push({ key: i, label: <Link to={v.to}>{v.label}</Link> });
+  });
   return (
     <>
       <nav className={`navbar ${!isScrolled ? "white-nav" : null}`}>
@@ -144,7 +156,7 @@ const Navbar = ({ white = false }) => {
         </ul> */}
         <div className="navs-container">
           <h1>Lifesstonic</h1>
-          <ul>
+          <ul className="hide-tablet">
             {navs?.map((nav, index) => {
               return (
                 <li
@@ -182,6 +194,22 @@ const Navbar = ({ white = false }) => {
               <SearchOutlined />
             </button>
           </form>
+          <Dropdown
+            menu={{
+              items,
+            }}
+            placement="bottomLeft"
+            arrow
+            className="showmobil"
+          >
+            <button>
+              <MenuOutlined
+                style={{
+                  fontSize: "20px",
+                }}
+              />
+            </button>
+          </Dropdown>
         </div>
 
         <div className={`nav-detail main-section ${open ? "visible" : null}`}>

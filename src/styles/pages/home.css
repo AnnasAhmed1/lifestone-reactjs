@@ -48,11 +48,14 @@
     gap: 20px;
     align-items: center;
     display: flex;
+    flex-wrap: wrap;
 
     /* flex-wrap: wrap; */
 
 
 }
+
+
 
 .home-main .product-container .home-product-card {
     width: 100%;
@@ -69,6 +72,17 @@
     align-items: center;
     border-radius: 20px;
     cursor: pointer;
+}
+
+@media(max-width:576px) {
+    .home-main .product-container {
+        flex-direction: column;
+    }
+
+    .home-main .product-container .home-product-card {
+        width: 80%;
+        border-radius: 10px;
+    }
 }
 
 .home-main .product-container .home-product-card:hover {

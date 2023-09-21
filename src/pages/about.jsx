@@ -17,7 +17,7 @@ const About = () => {
         }}
       ></div>
       <section className="about-head">
-        <div className="container/">
+        <div className="container/ flex-responsive">
           <h5 className="helper-h5">
             Helping millions
             <br />

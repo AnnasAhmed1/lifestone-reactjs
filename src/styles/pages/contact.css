@@ -63,6 +63,16 @@
     display: flex;
 }
 
+@media (max-width:768px) {
+    .contact-main .contact-section form p {
+        gap: 10px;
+    }
+
+    .contact-main .contact-section form input {
+        padding: 0 3px;
+    }
+}
+
 .contact-main .contact-section form p input {
     flex: 1;
 }
@@ -78,6 +88,7 @@
     width: 100%;
 
 }
+
 
 .contact-main .contact-section form button {
     font-size: 24px;
@@ -122,7 +133,6 @@
     flex-direction: column;
     justify-content: center;
     gap: 5px;
-    /* height: max-content; */
 
 }
 
@@ -132,6 +142,28 @@
     width: fit-content;
     margin-left: -12px;
     padding: 12px 20px;
+}
+
+@media (max-width:576px) {
+
+    .contact-main .contact-section {
+        width: 95%;
+        flex-direction: column;
+    }
+
+    .contact-main .contact-section form {
+        width: 100%;
+    }
+
+    .contact-main .contact-section>div {
+        width: 100%;
+        padding: 20px 40px;
+    }
+
+    .contact-main .contact-section>div p {
+        margin-left: 0px;
+    }
+
 }
 
 .modal {

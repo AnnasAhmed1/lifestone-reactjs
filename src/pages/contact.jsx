@@ -95,7 +95,7 @@ const Contact = () => {
                 }
               }}
             >
-              <p>
+              <p className="flex-responsive">
                 Hello there, my name is
                 <input
                   type="text"
@@ -121,7 +121,7 @@ const Contact = () => {
                   }}
                 />
               </p>
-              <p>
+              <p className="flex-responsive">
                 you can reach me at
                 <input
                   type="email"
