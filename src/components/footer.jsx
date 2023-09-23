@@ -77,7 +77,10 @@ const Footer = () => {
         <Link to={"https://www.instagram.com/"} target="_blank">
           <InstagramOutlined />
         </Link>
-        <Link to={"https://www.facebook.com/"} target="_blank">
+        <Link
+          to={"https://www.facebook.com/profile.php?id=61551733833947"}
+          target="_blank"
+        >
           <FacebookOutlined />
         </Link>
         <Link to={"https://youtube.com/"} target="_blank">
