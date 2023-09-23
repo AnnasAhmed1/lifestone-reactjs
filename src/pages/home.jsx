@@ -47,7 +47,7 @@ const Home = () => {
   ];
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
-    const maxScroll = window.innerHeight / 2; // Adjust as needed
+    const maxScroll = window.innerHeight / 2.75; // Adjust as needed
     const calculatedOpacity = 1 - Math.min(scrollPosition / maxScroll, 1);
 
     setOpacity(calculatedOpacity);
