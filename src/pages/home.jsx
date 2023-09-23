@@ -104,18 +104,24 @@ const Home = () => {
             color="light"
             style={{ opacity }}
           />
-          <P2
-            text="Lifestone a division if INNOTECH MANAGEMENT INC., is your dedicated destination for all things stone. Whether you're an architect, fabricator, homeowner, contractor, or enterpreneur. Our innovative solutions cater to your unique stone-related needs, Welcome to a world where stone meets innovation. Explore Lifestone today."
-            // text="Discover Your Stone Journey with Lifestone Architects, Fabricators, Homeowners, Contractors, Enterpreneurs - Lifestone has something for everyone in the world of stone."
-            color="light"
-            center
+          <p
+            className="helper-p2"
             style={{
               letterSpacing: "1.3px",
               marginTop: "20px",
               opacity,
               fontWeight: "500",
+              textAlign: "center",
+              color: "var(--light)",
             }}
-          />
+          >
+            Lifestone a division if <span className="red-text">INN</span>OTECH
+            MANAGEMENT INC., is your dedicated destination for all things stone.
+            Whether you're an architect, fabricator, homeowner, contractor, or
+            enterpreneur. Our innovative solutions cater to your unique
+            stone-related needs, Welcome to a world where stone meets
+            innovation. Explore Lifestone today.
+          </p>
         </div>
       </section>
       <section className="main-section container">

@@ -124,7 +124,7 @@ const Navbar = ({ white = false }) => {
     },
     {
       label: "PRODUCTS",
-      to: "/products",
+      to: "/products/1",
       navDetail: false,
     },
     {

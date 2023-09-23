@@ -23,7 +23,7 @@ const Footer = () => {
     },
     {
       label: "PRODUCTS",
-      to: "/products",
+      to: "/products/1",
       navDetail: false,
     },
     {
