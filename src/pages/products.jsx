@@ -4,8 +4,11 @@ import Footer from "../components/footer";
 import "../styles/pages/product.css";
 import { Tabs } from "antd";
 import ProductWithDetailCard from "../components/productWithDetailCard";
+import { useParams } from "react-router-dom";
 
 const Products = () => {
+  // const { tab } = useParams();
+  // const activeTab = tab ? tab : "1";
   const pruductsDetails = {
     "Manufacturing Consulting": {
       details: "",
@@ -165,11 +168,14 @@ const Products = () => {
       children: (
         <section>
           {products.fabricators?.map((product, index) => {
-            console.log(pruductsDetails[product]);
+            product.split("INN").map((v, i) => {
+              console.log(v);
+            });
             return (
               <ProductWithDetailCard
                 key={index}
-                title={product}
+                title={product.replace(/INN/g, "")}
+                INN={product.includes("INN")}
                 description={
                   pruductsDetails[product]?.details?.length
                     ? pruductsDetails[product].details
@@ -197,7 +203,8 @@ const Products = () => {
             return (
               <ProductWithDetailCard
                 key={index}
-                title={product}
+                title={product.replace(/INN/g, "")}
+                INN={product.includes("INN")}
                 description={
                   pruductsDetails[product]?.details?.length
                     ? pruductsDetails[product].details
@@ -225,7 +232,8 @@ const Products = () => {
             return (
               <ProductWithDetailCard
                 key={index}
-                title={product}
+                title={product.replace(/INN/g, "")}
+                INN={product.includes("INN")}
                 description={
                   pruductsDetails[product]?.details?.length
                     ? pruductsDetails[product].details
@@ -253,7 +261,8 @@ const Products = () => {
             return (
               <ProductWithDetailCard
                 key={index}
-                title={product}
+                title={product.replace(/INN/g, "")}
+                INN={product.includes("INN")}
                 description={
                   pruductsDetails[product]?.details?.length
                     ? pruductsDetails[product].details
@@ -281,7 +290,8 @@ const Products = () => {
             return (
               <ProductWithDetailCard
                 key={index}
-                title={product}
+                title={product.replace(/INN/g, "")}
+                INN={product.includes("INN")}
                 description={
                   pruductsDetails[product]?.details?.length
                     ? pruductsDetails[product].details
@@ -315,7 +325,7 @@ const Products = () => {
           centered
           inkBarColor={"#000000"}
           itemActiveColor={"#000000"}
-          defaultActiveKey="1"
+          defaultActiveKey={"1"}
           items={items}
           onChange={onChange}
           tabBarStyle={{}}

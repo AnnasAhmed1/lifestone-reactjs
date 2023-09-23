@@ -2,6 +2,13 @@ import React from "react";
 import { MailOutlined, PhoneOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 
+import {
+  TwitterOutlined,
+  InstagramOutlined,
+  FacebookOutlined,
+  YoutubeOutlined,
+} from "@ant-design/icons";
+
 const Footer = () => {
   const navs = [
     {
@@ -63,6 +70,20 @@ const Footer = () => {
         <li>Sitemap</li>
         <li>Login</li>
       </ul>
+      <div className="contact-icons">
+        <Link to={"https://twitter.com/"} target="_blank">
+          <TwitterOutlined />
+        </Link>
+        <Link to={"https://www.instagram.com/"} target="_blank">
+          <InstagramOutlined />
+        </Link>
+        <Link to={"https://www.facebook.com/"} target="_blank">
+          <FacebookOutlined />
+        </Link>
+        <Link to={"https://youtube.com/"} target="_blank">
+          <YoutubeOutlined />
+        </Link>
+      </div>
     </footer>
   );
 };

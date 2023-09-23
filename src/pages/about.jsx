@@ -4,6 +4,7 @@ import { H2, H5 } from "../helper/heading";
 import "../styles/pages/about.css";
 import { P3 } from "../helper/paragraph";
 import Footer from "../components/footer";
+import TestimonialSlider from "../components/testimonialSlider";
 
 const About = () => {
   return (
@@ -78,6 +79,18 @@ const About = () => {
         </div>
         <div className="image">
           <img src={require("../assets/leaf_about.jpeg")} alt="" />
+        </div>
+      </section>
+      <section
+        style={{
+          backgroundColor: "#F5F5F5",
+        }}
+        className="main-section"
+      >
+        <div className="container">
+          <H2 text="What Clients Say" />
+          <br />
+          <TestimonialSlider />
         </div>
       </section>
       <Footer />

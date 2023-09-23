@@ -15,11 +15,12 @@ function App() {
   return (
     <Routes>
       <Route index element={<Home />} />
-      <Route path="about" element={<About />} />
-      <Route path="contact" element={<Contact />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
       {/* <Route path="portfolio" element={<Portfolio />} /> */}
-      <Route path="products" element={<Products />} />
-      <Route path="faq" element={<Faq />} />
+      {/* <Route path="/products:tab" element={<Products />} /> */}
+      <Route path="/products" element={<Products />} />
+      <Route path="/faq" element={<Faq />} />
       {/* <Route path="*" element={<NotFound />} /> */}
     </Routes>
   );

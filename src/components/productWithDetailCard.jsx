@@ -7,6 +7,7 @@ const ProductWithDetailCard = ({
   description,
   reverse = false,
   subTitle,
+  INN = false,
 }) => {
   return (
     <div
@@ -27,7 +28,16 @@ const ProductWithDetailCard = ({
           alignItems: "center",
         }}
       >
-        <H3 text={title} center />
+        <h3
+          className="helper-h3"
+          style={{
+            textAlign: "center",
+          }}
+        >
+          {INN ? <span className="red-text">INN</span> : null}
+          {title}
+        </h3>
+        {/* <H3 text={title} center /> */}
         <H4 text={subTitle} fontWeight="500" center />
 
         {/* <img

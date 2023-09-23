@@ -155,7 +155,23 @@ const Navbar = ({ white = false }) => {
           <li>Hospitality Jobs</li>
         </ul> */}
         <div className="navs-container">
-          <h1>Lifesstonic</h1>
+          <div>
+            <h1
+              style={{
+                fontSize: "32px",
+              }}
+            >
+              Lifestone
+            </h1>
+            <p
+              style={{
+                fontSize: "12px",
+                color: !isScrolled ? "#d7d7d7" : "#555555",
+              }}
+            >
+              <span className="red-text">INN</span>OTECH MANAGEMENT INC.
+            </p>
+          </div>
           <ul className="hide-tablet">
             {navs?.map((nav, index) => {
               return (
@@ -202,7 +218,7 @@ const Navbar = ({ white = false }) => {
             arrow
             className="showmobil"
           >
-            <button>
+            <button className="show-tablet">
               <MenuOutlined
                 style={{
                   fontSize: "20px",

@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/navbar";
-import { H1, H2, H3, H4 } from "../helper/heading";
+import { H1, H2, H3, H4, H5 } from "../helper/heading";
 import "../styles/pages/home.css";
 import SimpleSlider from "../components/productSlider";
 import IconDetail from "../components/iconDetail";
 import TestimonialSlider from "../components/testimonialSlider";
 import Footer from "../components/footer";
+import { P2 } from "../helper/paragraph";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [opacity, setOpacity] = useState(1);
@@ -52,7 +54,7 @@ const Home = () => {
   };
   const products = [
     {
-      title: "For Fabricators",
+      title: "For \nFabricators",
     },
     {
       title: "For Architects",
@@ -102,14 +104,16 @@ const Home = () => {
             color="light"
             style={{ opacity }}
           />
-          <H4
-            text="Discover Your Stone Journey with Lifestone Architects, Fabricators, Homeowners, Contractors, Enterpreneurs - Lifestone has something for everyone in the world of stone."
+          <P2
+            text="Lifestone a division if INNOTECH MANAGEMENT INC., is your dedicated destination for all things stone. Whether you're an architect, fabricator, homeowner, contractor, or enterpreneur. Our innovative solutions cater to your unique stone-related needs, Welcome to a world where stone meets innovation. Explore Lifestone today."
+            // text="Discover Your Stone Journey with Lifestone Architects, Fabricators, Homeowners, Contractors, Enterpreneurs - Lifestone has something for everyone in the world of stone."
             color="light"
             center
             style={{
-              letterSpacing: "1.6px",
+              letterSpacing: "1.3px",
               marginTop: "20px",
               opacity,
+              fontWeight: "500",
             }}
           />
         </div>
@@ -120,9 +124,13 @@ const Home = () => {
         <div className="product-container">
           {products?.map((product, index) => {
             return (
-              <div className="home-product-card container1" key={index}>
-                <H4 center text={product.title} />
-              </div>
+              <Link
+                to={`/products`}
+                className="home-product-card container1"
+                key={index}
+              >
+                <P2 fontWeight="700" center text={product.title} />
+              </Link>
             );
           })}
         </div>
@@ -140,18 +148,7 @@ const Home = () => {
           })}
         </div>
       </section> */}
-      <section
-        style={{
-          backgroundColor: "#F5F5F5",
-        }}
-        className="main-section"
-      >
-        <div className="container">
-          <H2 text="What Clients Say" />
-          <br />
-          <TestimonialSlider />
-        </div>
-      </section>
+
       <Footer />
     </main>
   );

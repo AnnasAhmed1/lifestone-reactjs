@@ -1,7 +1,7 @@
 .home-main .home-head {
     background-image: url('../../assets/home_bg.jpeg');
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -9,7 +9,7 @@
 }
 
 .home-main .home-head>div {
-    height: 100%;
+    height: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,15 +58,13 @@
 
 
 .home-main .product-container .home-product-card {
+    color: #555555;
     width: 100%;
     flex: 1;
-
-    height: 150px;
+    height: 100px;
     border-radius: 20px;
-    padding: 16px 12px;
-    /* border: 1px solid #dbdbdb; */
+    padding: 14px 0px;
     border: 1px solid var(--textPrimary);
-    /* background-color: #eeeeee; */
     display: flex;
     justify-content: center;
     align-items: center;
