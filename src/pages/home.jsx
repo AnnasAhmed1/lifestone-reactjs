@@ -125,7 +125,7 @@ const Home = () => {
           {products?.map((product, index) => {
             return (
               <Link
-                to={`/products`}
+                to={`/products/${index + 1}`}
                 className="home-product-card container1"
                 key={index}
               >
