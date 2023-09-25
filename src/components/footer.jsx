@@ -71,10 +71,13 @@ const Footer = () => {
         <li>Login</li>
       </ul>
       <div className="contact-icons">
-        <Link to={"https://twitter.com/"} target="_blank">
+        <Link to={"https://twitter.com/LifestoneX"} target="_blank">
           <TwitterOutlined />
         </Link>
-        <Link to={"https://www.instagram.com/"} target="_blank">
+        <Link
+          to={"https://www.instagram.com/lifestoneplatform/?hl=en"}
+          target="_blank"
+        >
           <InstagramOutlined />
         </Link>
         <Link
@@ -83,7 +86,10 @@ const Footer = () => {
         >
           <FacebookOutlined />
         </Link>
-        <Link to={"https://youtube.com/"} target="_blank">
+        <Link
+          to={"https://www.youtube.com/channel/UCX_EYu2YGbZM6HZN6GXy-nQ"}
+          target="_blank"
+        >
           <YoutubeOutlined />
         </Link>
       </div>

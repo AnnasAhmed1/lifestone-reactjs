@@ -36,6 +36,10 @@
     border: 1px solid var(--light);
     width: 60px;
 }
+.subheading>.horizontal-line-black {
+    border: 1px solid var(--textPrimary);
+    width: 60px;
+}
 
 .home-main .icons-container {
     display: grid;

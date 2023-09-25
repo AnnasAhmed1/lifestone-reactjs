@@ -1,12 +1,48 @@
 import React from "react";
 import Navbar from "../components/navbar";
-import { H2, H5 } from "../helper/heading";
+import { H1, H2, H3, H4, H5 } from "../helper/heading";
 import "../styles/pages/about.css";
 import { P3 } from "../helper/paragraph";
 import Footer from "../components/footer";
 import TestimonialSlider from "../components/testimonialSlider";
 
 const About = () => {
+  const aboutContent = [
+    {
+      heading: "A Journey Through Stone",
+      detail:
+        "Welcome to Lifestone, where our journey with stone has spanned over two decades, and it continues with a passion for innovation and excellence.",
+    },
+    {
+      heading: "Our Founder's Stone Odyssey",
+      detail:
+        "Our founder, deeply entrenched in the stone industry since the year 2000, embarked on a remarkable journey that has embraced every facet of this timeless craft. With a strong background in natural stone processing technology, our founder honed their skills with renowned German company AKEMI GMB.",
+    },
+    {
+      heading: "Pioneering the Stone Revolution",
+      detail:
+        "At Lifestone, we've always had our sights set on the horizon, envisioning the revolutionization and adaptation of stone craftsmanship to modern industry standards. Our goal is to meet the ever-evolving interests of stone enthusiasts while ensuring sustainability, cost-effectiveness, and a profitable lifecycle—all without compromising quality.",
+    },
+    {
+      heading: "A Fusion of Expertise",
+      detail:
+        "Our founder brings a unique blend of expertise to the table. With a foundation in management knowledge, computer science, and innovative solutions, coupled with over 22 years of hands-on field experience at every level of the stone industry, we are poised to make a significant impact.",
+    },
+    {
+      heading: "Our Commitment to Stone Lovers",
+      detail:
+        "Lifestone Platform is our means of sharing this extensive journey with fellow stone lovers. We are dedicated to enhancing every aspect of the stone business, optimizing processes, and breathing new life into the stone lifecycle.",
+    },
+    {
+      heading: "A World of Possibilities",
+      detail:
+        "At Lifestone, every conceivable angle of the stone business is our canvas for improvement. We strive to create a world where the stone industry thrives, where artistry meets innovation, and where every stone tells a story of craftsmanship, quality, and sustainability",
+    },
+    {
+      detail:
+        "Join us on this incredible journey through stone. Explore Lifestone Platform and discover how we're reshaping the future of the stone industry—one innovative idea at a time.",
+    },
+  ];
   return (
     <main className="about-main">
       <Navbar white />
@@ -39,47 +75,62 @@ const About = () => {
           ></path>
         </svg>
       </section>
-      <section className="main-section container flex-responsive  about-section">
-        <div>
-          <H2
-            text="About Lifestone"
-            center
-            color="primary"
+
+      <section className="main-section flex-responsive/ container about-section">
+        <H2
+          text="About Lifestone"
+          center
+          color="primary"
+          style={{
+            marginBottom: "30px",
+          }}
+        />
+        {aboutContent?.map((content, index) => {
+          return (
+            <>
+              <div
+                key={index}
+                className="subheading"
+                style={{
+                  justifyContent: "start",
+                }}
+              >
+                <H4 text={content.heading} />
+                {content.heading && (
+                  <div className="horizontal-line-black1"></div>
+                )}
+              </div>
+              <P3 text={content.detail} fontWeight="300" />
+            </>
+          );
+        })}
+        {/* <div
+            className="subheading"
             style={{
-              marginBottom: "30px",
+              justifyContent: "start",
             }}
-          />
+          >
+            <H4 text="A Journey Through Stone" />
+            <div className="horizontal-line-black"></div>
+          </div>
           <P3
-            text="At LifeStone we believe in the natural beauty of stone in all of its forms, as well as in its ability to add value to your home and life. Granite and marble make for stunning and long-lasting countertops, but did you know they can be works of art as well? LifeStone can take your vision and bring it to life in a stone sculpture or mosaic, can tackle tough architectural designs others can't, and can help you with the repair and maintenance of your existing stone surfaces. We even offer custom cut non-slip stone material for your pools and outdoor stairs. If you can imagine it, we can build it."
+            text="Welcome to Lifestone, where our journey with stone has spanned over two decades, and it continues with a passion for innovation and excellence."
             fontWeight="300"
           />
-        </div>
-        <div className="image">
-          <img src={require("../assets/about_lifestone.jpeg")} alt="" />
-        </div>
-      </section>
-      <section className="main-section container flex-responsive flex-reverse about-section">
-        <div>
-          <H2
-            text="Going the Extra Mile"
-            center
-            color="primary"
+          <div
+            className="subheading"
             style={{
-              marginBottom: "30px",
+              justifyContent: "start",
             }}
-          />
+          >
+            <H4 text="Our Founder's Stone Odyssey" />
+            <div className="horizontal-line-black"></div>
+          </div>
+
           <P3
-            text="Our product is 100% green as well! We use all natural stone, and make sure to use every inch of it. Sometimes, when fabricating large pieces for a kitchen or bathroom, scraps get left behind that can't be used in other large projects. But when it comes to the art of stonework, LifeStone can turn any piece into something beautiful, meaning less waste and less in the landfill! "
+            text="Our founder, deeply entrenched in the stone industry since the year 2000, embarked on a remarkable journey that has embraced every facet of this timeless craft. With a strong background in natural stone processing technology, our founder honed their skills with renowned German company AKEMI GMB."
             fontWeight="300"
-          />
-          <P3
-            text="From start to finish and beyond, LifeStone keeps your needs at heart. We offer consultation services to help you decide on what you need and what will work best for your project. We fabricate everything right in our warehouse in North Vancouver, and install at your space on your schedule. We even offer restoration and maintenance products and services to help keep your stone surfaces in top condition. And if seeing us work sparks some creativity and inspiration in you, we offer speciality training on every step of the process. "
-            fontWeight="300"
-          />
-        </div>
-        <div className="image">
-          <img src={require("../assets/leaf_about.jpeg")} alt="" />
-        </div>
+          /> */}
       </section>
       <section
         style={{

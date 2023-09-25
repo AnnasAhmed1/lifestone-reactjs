@@ -36,6 +36,12 @@
     border-radius: 35% 0 0 60%;
 }
 
+.about-main .about-section>div {
+    margin-top: 30px;
+    margin-bottom: 5px;
+
+}
+
 @media (max-width:768px) {
 
 

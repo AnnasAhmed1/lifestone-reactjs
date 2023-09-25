@@ -71,7 +71,8 @@
 .faq-main .faq-container ul>li .faq-active {
     /* padding: 10px 45px; */
     /* display: block; */
-    max-height: 100px;
+    max-height: 150px;
+    overflow-y: scroll;
 }
 
 .question .anticon {
