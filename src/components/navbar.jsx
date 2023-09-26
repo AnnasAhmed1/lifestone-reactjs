@@ -8,7 +8,7 @@ import {
 } from "@ant-design/icons";
 import "../styles/component.css";
 import { H3, H4 } from "../helper/heading";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // import type { MenuProps } from 'antd';
 
@@ -142,6 +142,7 @@ const Navbar = ({ white = false }) => {
   navs.map((v, i) => {
     items.push({ key: i, label: <Link to={v.to}>{v.label}</Link> });
   });
+  const navigate = useNavigate();
   return (
     <>
       <nav className={`navbar ${!isScrolled ? "white-nav" : null}`}>
@@ -188,7 +189,12 @@ const Navbar = ({ white = false }) => {
               );
             })}
           </ul>
-          <ButtonComp text="Login" />
+          <ButtonComp
+            text="Login"
+            onClick={() => {
+              navigate("/login");
+            }}
+          />
           <form
             onSubmit={(e) => {
               e.preventDefault();

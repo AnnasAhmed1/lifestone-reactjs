@@ -11,10 +11,14 @@ import Contact from "./pages/contact";
 import Portfolio from "./pages/portfolio";
 import Faq from "./pages/faq";
 import Products from "./pages/products";
+import Login from "./pages/login";
+import Signup from "./pages/signup";
 function App() {
   return (
     <Routes>
       <Route index element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       {/* <Route path="portfolio" element={<Portfolio />} /> */}

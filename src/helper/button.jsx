@@ -8,9 +8,11 @@ const ButtonComp = ({
   color = "light",
   thin = false,
   style = {},
+  onClick = () => {},
 }) => {
   return (
     <button
+      onClick={onClick}
       className={`helper-p3 ${
         thin ? "helper-button-thin" : "helper-button"
       } flex`}
