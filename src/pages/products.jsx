@@ -168,13 +168,12 @@ const Products = () => {
       children: (
         <section>
           {products.fabricators?.map((product, index) => {
-            product.split("INN").map((v, i) => {
-              console.log(v);
-            });
+            console.log(product, "producctt");
             return (
               <ProductWithDetailCard
                 key={index}
                 title={product.replace(/INN/g, "")}
+                product={product}
                 INN={product.includes("INN")}
                 description={
                   pruductsDetails[product]?.details?.length
@@ -204,6 +203,7 @@ const Products = () => {
               <ProductWithDetailCard
                 key={index}
                 title={product.replace(/INN/g, "")}
+                product={product}
                 INN={product.includes("INN")}
                 description={
                   pruductsDetails[product]?.details?.length
@@ -233,6 +233,7 @@ const Products = () => {
               <ProductWithDetailCard
                 key={index}
                 title={product.replace(/INN/g, "")}
+                product={product}
                 INN={product.includes("INN")}
                 description={
                   pruductsDetails[product]?.details?.length
@@ -262,6 +263,7 @@ const Products = () => {
               <ProductWithDetailCard
                 key={index}
                 title={product.replace(/INN/g, "")}
+                product={product}
                 INN={product.includes("INN")}
                 description={
                   pruductsDetails[product]?.details?.length
@@ -292,6 +294,7 @@ const Products = () => {
                 key={index}
                 title={product.replace(/INN/g, "")}
                 INN={product.includes("INN")}
+                product={product}
                 description={
                   pruductsDetails[product]?.details?.length
                     ? pruductsDetails[product].details

@@ -1,6 +1,7 @@
 import React from "react";
 import { H3, H4 } from "../helper/heading";
 import { P4 } from "../helper/paragraph";
+import { useNavigate } from "react-router-dom";
 
 const ProductWithDetailCard = ({
   title,
@@ -8,13 +9,20 @@ const ProductWithDetailCard = ({
   reverse = false,
   subTitle,
   INN = false,
+  product,
 }) => {
+  const navigate = useNavigate();
   return (
     <div
       style={{
         flexDirection: reverse ? "row-reverse" : null,
       }}
       className="productWithDetailCard"
+      onClick={() => {
+        if (product) {
+          navigate(`/product/${product}`);
+        }
+      }}
     >
       <div
         style={{
