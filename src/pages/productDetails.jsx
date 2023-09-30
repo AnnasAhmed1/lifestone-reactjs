@@ -389,7 +389,7 @@ const ProductDetails = () => {
 
         <div
           style={{
-            backgroundColor: "#2D4198",
+            backgroundColor: "rgb(45, 65, 152)",
           }}
         >
           <div
@@ -407,13 +407,48 @@ const ProductDetails = () => {
               gap: "30px",
             }}
           >
-            <H1 text={productDetail} color="light" />
+            <h1
+              className="helper-h1"
+              style={{
+                color: "#ffffff",
+              }}
+            >
+              {productDetail.split("INN")?.map((part, index) =>
+                index < productDetail.split("INN").length - 1 ? (
+                  // <h1 key={index}>
+                  <>
+                    {part}
+                    <span className="red-text">{"INN"}</span>
+                  </>
+                ) : (
+                  // </h1>
+                  part
+                )
+              )}
+            </h1>
             <H3
               color="light"
               text={
                 productDetails[productDetail]?.subTitle
                   ? productDetails[productDetail]?.subTitle
-                  : "Lorem ipsum dolor sit amet consectetur."
+                      .split("INN")
+                      ?.map((part, index) =>
+                        index <
+                        productDetails[productDetail]?.subTitle.split("INN")
+                          .length -
+                          1 ? (
+                          // <h1 key={index}>
+                          <>
+                            {part}
+                            <span className="red-text">{"INN"}</span>
+                          </>
+                        ) : (
+                          // </h1>
+                          part
+                        )
+                      )
+                  : // productDetails[productDetail]?.subTitle
+                    "Lorem ipsum dolor sit amet consectetur."
               }
             />
 
@@ -422,7 +457,25 @@ const ProductDetails = () => {
               text={
                 productDetails[productDetail]?.details
                   ? productDetails[productDetail]?.details
-                  : "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente aspernatur dolorum alias totam, ullam ipsam facilis, nisi optio laboriosam nam mollitia repudiandae earum accusamus ratione cum magnam harum quisquam delectus ducimus quod itaque tempore provident eum repellat? Quos corrupti sint atque animi magni rerum magnam vitae et adipisci expedita sequi ullam eos ab omnis, autem itaque incidunt quaerat placeat non explicabo doloribus eligendi modi nisi. Consectetur molestiae ab doloremque recusandae corporis hic excepturi ipsa, natus beatae exercitationem quidem, impedit dolorem accusamus quod ipsam alias perferendis est nulla omnis."
+                      .split("INN")
+                      ?.map((part, index) =>
+                        index <
+                        productDetails[productDetail]?.details.split("INN")
+                          .length -
+                          1 ? (
+                          // <h1 key={index}>
+                          <>
+                            {part}
+                            <span className="red-text">{"INN"}</span>
+                          </>
+                        ) : (
+                          // </h1>
+                          part
+                        )
+                      )
+                  : // productDetails[productDetail]?.details
+
+                    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente aspernatur dolorum alias totam, ullam ipsam facilis, nisi optio laboriosam nam mollitia repudiandae earum accusamus ratione cum magnam harum quisquam delectus ducimus quod itaque tempore provident eum repellat? Quos corrupti sint atque animi magni rerum magnam vitae et adipisci expedita sequi ullam eos ab omnis, autem itaque incidunt quaerat placeat non explicabo doloribus eligendi modi nisi. Consectetur molestiae ab doloremque recusandae corporis hic excepturi ipsa, natus beatae exercitationem quidem, impedit dolorem accusamus quod ipsam alias perferendis est nulla omnis."
               }
             />
           </div>
@@ -440,8 +493,35 @@ const ProductDetails = () => {
                 (detail, index) => {
                   return (
                     <div key={index}>
-                      <H4 text={detail.heading} />
-                      <P3 text={detail.text} />
+                      <h4 className="helper-h4">
+                        {detail.heading.split("INN")?.map((part, index) =>
+                          index < detail.heading.split("INN").length - 1 ? (
+                            <>
+                              {part}
+                              <span className="red-text">{"INN"}</span>
+                            </>
+                          ) : (
+                            part
+                          )
+                        )}
+                        {/* {detail.heading} */}
+                      </h4>
+                      {/* <H4 text={detail.heading} /> */}
+                      <p className="helper-p3">
+                        {detail.text.split("INN")?.map((part, index) =>
+                          index < detail.text.split("INN").length - 1 ? (
+                            <>
+                              {part}
+                              <span className="red-text">{"INN"}</span>
+                            </>
+                          ) : (
+                            part
+                          )
+                        )}
+
+                        {/* {detail.text} */}
+                      </p>
+                      {/* <P3 text={detail.text} /> */}
                     </div>
                   );
                 }
@@ -449,8 +529,32 @@ const ProductDetails = () => {
             : compDetails.map((detail, index) => {
                 return (
                   <div key={index}>
-                    <H4 text={detail.heading} />
-                    <P3 text={detail.text} />
+                    <H4
+                      text={detail.heading.split("INN")?.map((part, index) =>
+                        index < detail.heading.split("INN").length - 1 ? (
+                          <>
+                            {part}
+                            <span className="red-text">{"INN"}</span>
+                          </>
+                        ) : (
+                          part
+                        )
+                      )}
+
+                      // {detail.heading}
+                    />
+                    <P3
+                      text={detail.text.split("INN")?.map((part, index) =>
+                        index < detail.text.split("INN").length - 1 ? (
+                          <>
+                            {part}
+                            <span className="red-text">{"INN"}</span>
+                          </>
+                        ) : (
+                          part
+                        )
+                      )}
+                    />
                   </div>
                 );
               })}
