@@ -59,7 +59,7 @@ const Footer = () => {
           );
         })}
       </ul>
-      <ul
+      {/* <ul
         style={{
           fontWeight: 300,
         }}
@@ -69,7 +69,7 @@ const Footer = () => {
         <li>Privacy policy</li>
         <li>Sitemap</li>
         <li>Login</li>
-      </ul>
+      </ul> */}
       <div className="contact-icons">
         <Link to={"https://twitter.com/LifestoneX"} target="_blank">
           <TwitterOutlined />
