@@ -34,6 +34,21 @@ const Login = () => {
           class={`login-container  ${active ? "right-panel-active" : null}`}
           id="container"
         >
+          {/* <img
+            style={{
+              position: "absolute",
+              width: "70px",
+              height: "70px",
+              zIndex: "99999",
+              left: "48%",
+              right: "48%",
+              top: "-40px",
+
+              borderRadius: "50%",
+            }}
+            src={require("../assets/about_lifestone.jpeg")}
+            alt=""
+          /> */}
           <div class="form-container sign-up-container">
             <form
               onSubmit={(e) => {
@@ -76,7 +91,6 @@ const Login = () => {
                 <UserOutlined
                   style={{
                     marginRight: "-15px",
-                    color: "var(--primary)",
                   }}
                 />
                 <input
@@ -96,7 +110,6 @@ const Login = () => {
                 <UserOutlined
                   style={{
                     marginRight: "-15px",
-                    color: "var(--primary)",
                   }}
                 />
                 <input
@@ -116,7 +129,7 @@ const Login = () => {
                 <PhoneOutlined
                   style={{
                     marginRight: "-15px",
-                    color: "var(--primary)",
+                    transform: "rotate(90deg)",
                   }}
                 />
                 <input
@@ -136,7 +149,6 @@ const Login = () => {
                 <MailOutlined
                   style={{
                     marginRight: "-15px",
-                    color: "var(--primary)",
                   }}
                 />
                 <input type="text" class="login__input" placeholder="Email" />
@@ -152,7 +164,6 @@ const Login = () => {
                 <LockFilled
                   style={{
                     marginRight: "-15px",
-                    color: "var(--primary)",
                   }}
                 />
                 <input
@@ -172,7 +183,6 @@ const Login = () => {
                 <LockFilled
                   style={{
                     marginRight: "-15px",
-                    color: "var(--primary)",
                   }}
                 />
                 <input
@@ -226,7 +236,6 @@ const Login = () => {
                 <UserOutlined
                   style={{
                     marginRight: "-15px",
-                    color: "var(--primary)",
                   }}
                 />
                 <input
@@ -246,7 +255,6 @@ const Login = () => {
                 <LockFilled
                   style={{
                     marginRight: "-15px",
-                    color: "var(--primary)",
                   }}
                 />
                 <input

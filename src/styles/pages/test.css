@@ -148,7 +148,7 @@
 }
 
 .login-main form {
-    background-color: #FFFFFF;
+    /* background-color: #FFFFFF; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -170,7 +170,7 @@
     overflow: hidden;
     width: 768px;
     max-width: 100%;
-    min-height: 580px;
+    min-height: 560px;
 }
 
 .login-main .social-container .social {
@@ -182,6 +182,29 @@
     color: var(--light);
 
 
+}
+
+.login-container {
+    background-image: url('../../assets/contact_bg.jpeg');
+}
+
+.form-container {
+    /* background-color: red; */
+    background-image: url('../../assets/contact_bg.jpeg');
+}
+
+.form-container h1,
+.form-container p,
+.form-container span,
+.form-container a,
+.form-container input,
+.form-container input::placeholder,
+.form-container .anticon {
+    color: #ffffff;
+}
+
+.form-container input::placeholder {
+    color: #c3c2c2;
 }
 
 .login-main .form-container {

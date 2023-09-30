@@ -543,3 +543,47 @@ footer .contact-icons a:hover {
         border-bottom: 1px solid #dbdbdb !important;
     }
 }
+
+
+.productCard {
+    cursor: pointer;
+    position: relative;
+    border: 1px solid #ccc;
+}
+
+.productContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transform: translateY(-100%);
+    cursor: auto;
+    animation: slideDown 0.3s ease-in-out forwards;
+    opacity: 0;
+}
+
+
+
+.productCard.hovered .productContainer {
+    transform: translateY(0);
+    animation: slideDown 0.3s ease-in-out forwards;
+}
+
+
+@keyframes slideDown {
+    0% {
+        top: -100%;
+        opacity: 0;
+    }
+
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
