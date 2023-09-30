@@ -5,14 +5,12 @@ import {
   FacebookOutlined,
   GoogleOutlined,
   LockFilled,
-  MailOutlined,
-  PhoneOutlined,
   UserOutlined,
 } from "@ant-design/icons";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 
-const Login = () => {
+const Test = () => {
   const [active, setActive] = useState(false);
   return (
     <>
@@ -35,11 +33,7 @@ const Login = () => {
           id="container"
         >
           <div class="form-container sign-up-container">
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-              }}
-            >
+            <form action="#">
               <h1>Create Account</h1>
               <div class="social-container">
                 <a href="#" class="social">
@@ -82,7 +76,7 @@ const Login = () => {
                 <input
                   type="text"
                   class="login__input"
-                  placeholder="First Name"
+                  placeholder="Full Name"
                 />
               </div>
               <div
@@ -102,44 +96,8 @@ const Login = () => {
                 <input
                   type="text"
                   class="login__input"
-                  placeholder="Last Name"
+                  placeholder="User name / Email"
                 />
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  width: "100%",
-                }}
-                class="login__field"
-              >
-                <PhoneOutlined
-                  style={{
-                    marginRight: "-15px",
-                    color: "var(--primary)",
-                  }}
-                />
-                <input
-                  type="text"
-                  class="login__input"
-                  placeholder="Phone Number"
-                />
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  width: "100%",
-                }}
-                class="login__field"
-              >
-                <MailOutlined
-                  style={{
-                    marginRight: "-15px",
-                    color: "var(--primary)",
-                  }}
-                />
-                <input type="text" class="login__input" placeholder="Email" />
               </div>
               <div
                 style={{
@@ -161,35 +119,11 @@ const Login = () => {
                   placeholder="Password"
                 />
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  width: "100%",
-                }}
-                class="login__field"
-              >
-                <LockFilled
-                  style={{
-                    marginRight: "-15px",
-                    color: "var(--primary)",
-                  }}
-                />
-                <input
-                  type="password"
-                  class="login__input"
-                  placeholder="Confirm Password"
-                />
-              </div>
               <button>Sign Up</button>
             </form>
           </div>
           <div class="form-container sign-in-container">
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-              }}
-            >
+            <form action="#">
               <h1>Sign in</h1>
               <div class="social-container">
                 <a href="#" class="social">
@@ -304,4 +238,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Test;

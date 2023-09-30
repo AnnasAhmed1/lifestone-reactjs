@@ -12,7 +12,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 // import type { MenuProps } from 'antd';
 
-const Navbar = ({ white = false }) => {
+const Navbar = ({ white = false, style = {} }) => {
   const [isScrolled, setIsScrolled] = useState(white);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("home");
@@ -145,7 +145,10 @@ const Navbar = ({ white = false }) => {
   const navigate = useNavigate();
   return (
     <>
-      <nav className={`navbar ${!isScrolled ? "white-nav" : null}`}>
+      <nav
+        className={`navbar ${!isScrolled ? "white-nav" : null}`}
+        style={style}
+      >
         {/* <ul>
           <li>Media</li>
           <li className="circle"></li>

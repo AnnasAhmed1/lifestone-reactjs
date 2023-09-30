@@ -217,6 +217,7 @@
     justify-content: center;
 }
 
+
 .footer div {
     gap: 30px;
 }
@@ -437,14 +438,54 @@ footer .contact-icons a:hover {
     display: flex;
     /* align-items: center; */
     border-radius: 20px;
-    border: 1px solid var(--textLight);
     border: 1px solid #dbdbdb;
-    margin: 50px 0;
+    /* margin: 50px 0; */
     height: 220px;
     overflow-y: hidden;
+    transition: all 0.2s ease;
+    margin: 50px 0;
 
 }
 
+.card-animation {
+    /* border: 1px solid #e2e2e2; */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    /* padding: 10px; */
+    transition: all 0.1s ease-in-out;
+
+    --c: var(--primary);
+    /* the border color */
+    --b: 2px;
+    /* the border thickness*/
+    --g: 5px;
+    /* the gap on hover */
+
+    /* padding: calc(var(--g) + var(--b)); */
+    --_g: #0000 25%, var(--c) 0;
+    background:
+        conic-gradient(from 180deg at top var(--b) right var(--b), var(--_g)) var(--_i, 200%) 0 /200% var(--_i, var(--b)) no-repeat,
+        conic-gradient(at bottom var(--b) left var(--b), var(--_g)) 0 var(--_i, 200%)/var(--_i, var(--b)) 200% no-repeat;
+    transition: .1s, background-position .1s .1s;
+    cursor: pointer;
+
+    /* padding: 10px; */
+    /* border-radius: 20px; */
+
+}
+
+/* .productWithDetailCard:hover {
+    border-radius: 0px;
+    border: none
+} */
+
+.card-animation:hover {
+    /* padding: 0px; */
+
+    --_i: 100%;
+    transition: .3s, background-size .1s .3s;
+}
 
 
 .productWithDetailCard>div:nth-child(2) {

@@ -13,6 +13,7 @@ import Faq from "./pages/faq";
 import Products from "./pages/products";
 import Login from "./pages/login";
 import Signup from "./pages/signup";
+import Test from "./pages/text";
 import ProductDetails from "./pages/productDetails";
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <Route path="/products/:tab" element={<Products />} />
       <Route path="/product/:productDetail" element={<ProductDetails />} />
       <Route path="/faq" element={<Faq />} />
+      <Route path="/test" element={<Test />} />
       {/* <Route path="*" element={<NotFound />} /> */}
     </Routes>
   );

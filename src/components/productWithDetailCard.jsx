@@ -13,11 +13,17 @@ const ProductWithDetailCard = ({
 }) => {
   const navigate = useNavigate();
   return (
+    // <div
+    //   className="card-animation"
+    //   style={{
+    //     padding: "1px",
+    //   }}
+    // >
     <div
       style={{
         flexDirection: reverse ? "row-reverse" : null,
       }}
-      className="productWithDetailCard"
+      className="productWithDetailCard "
       onClick={() => {
         if (product) {
           navigate(`/product/${product}`);
@@ -26,7 +32,7 @@ const ProductWithDetailCard = ({
     >
       <div
         style={{
-          borderRadius: reverse ? "0px 20px 20px 0px" : "20px 0px 0px 20px",
+          // borderRadius: reverse ? "0px 20px 20px 0px" : "20px 0px 0px 20px",
           borderRight: !reverse ? "1px solid #dbdbdb" : null,
           borderLeft: reverse ? "1px solid #dbdbdb" : null,
           backgroundColor: "var(--bgLight)",
@@ -70,6 +76,7 @@ const ProductWithDetailCard = ({
         />
       </div>
     </div>
+    // </div>
   );
 };
 

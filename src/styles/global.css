@@ -28,13 +28,17 @@ li {
     list-style: none;
 }
 
+button {
+    cursor: pointer;
+}
+
 button,
 input {
     background-color: transparent;
     border: none;
 }
 
-.red-text {
+.red-text { 
     color: red;
 }
 
