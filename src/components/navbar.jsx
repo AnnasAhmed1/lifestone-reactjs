@@ -148,7 +148,9 @@ const Navbar = ({ white = false, style = {} }) => {
   return (
     <>
       <nav
-        className={`relative navbar ${!isScrolled ? "white-nav" : null}`}
+        className={`relative navbar ${
+          !isScrolled || mobileNav ? "white-nav" : null
+        }`}
         style={style}
       >
         {/* <ul>
