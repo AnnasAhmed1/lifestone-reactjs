@@ -5,6 +5,7 @@ import {
   CaretDownOutlined,
   SearchOutlined,
   MenuOutlined,
+  CloseOutlined,
 } from "@ant-design/icons";
 import "../styles/component.css";
 import { H3, H4 } from "../helper/heading";
@@ -143,10 +144,11 @@ const Navbar = ({ white = false, style = {} }) => {
     items.push({ key: i, label: <Link to={v.to}>{v.label}</Link> });
   });
   const navigate = useNavigate();
+  const [mobileNav, setMobileNav] = useState(false);
   return (
     <>
       <nav
-        className={`navbar ${!isScrolled ? "white-nav" : null}`}
+        className={`relative navbar ${!isScrolled ? "white-nav" : null}`}
         style={style}
       >
         {/* <ul>
@@ -219,7 +221,75 @@ const Navbar = ({ white = false, style = {} }) => {
               <SearchOutlined />
             </button>
           </form>
-          <Dropdown
+
+          <div
+            className={`active-mobile-nav ${
+              mobileNav ? "active-mobile-nav-activated" : null
+            }`}
+          >
+            <div>
+              <h1
+                style={{
+                  fontSize: "32px",
+                }}
+              >
+                Lifestone
+              </h1>
+              <p
+                style={{
+                  fontSize: "12px",
+                  color: !isScrolled ? "#d7d7d7" : "#555555",
+                }}
+              >
+                <span className="red-text">INN</span>OTECH MANAGEMENT INC.
+              </p>
+              <button
+                style={{
+                  color: "#ffffff",
+                  fontSize: "24px",
+                  position: "absolute",
+                  right: "20px",
+                  top: "20px",
+                }}
+                onClick={() => {
+                  setMobileNav(false);
+                }}
+              >
+                <CloseOutlined />
+              </button>
+            </div>
+            <ul className="">
+              {navs?.map((nav, index) => {
+                return (
+                  <li
+                    key={index}
+                    className="helper-p5"
+                    onClick={() => {
+                      handleNavDetail("THINGS TO DO", things);
+                      setMobileNav(false);
+                    }}
+                  >
+                    <Link to={nav.to}>{nav.label}</Link>
+                    {/* <CaretDownOutlined /> */}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+
+          <button
+            className="show-tablet"
+            onClick={() => {
+              setMobileNav(true);
+            }}
+          >
+            <MenuOutlined
+              style={{
+                fontSize: "20px",
+              }}
+            />
+          </button>
+          {/* <Dropdown
             menu={{
               items,
             }}
@@ -234,7 +304,7 @@ const Navbar = ({ white = false, style = {} }) => {
                 }}
               />
             </button>
-          </Dropdown>
+          </Dropdown> */}
         </div>
 
         <div className={`nav-detail main-section ${open ? "visible" : null}`}>
