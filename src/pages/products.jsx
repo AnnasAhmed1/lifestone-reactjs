@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import "../styles/pages/product.css";
 import { Tabs } from "antd";
 import ProductWithDetailCard from "../components/productWithDetailCard";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 
 const Products = () => {
   const { tab } = useParams();
@@ -163,7 +163,7 @@ const Products = () => {
 
   const items = [
     {
-      key: "1",
+      key: "Fabricators",
       label: "For Fabricators",
       children: (
         <section>
@@ -193,7 +193,7 @@ const Products = () => {
       ),
     },
     {
-      key: "2",
+      key: "Architects",
       label: "For Architects",
       children: (
         <section>
@@ -223,7 +223,7 @@ const Products = () => {
       ),
     },
     {
-      key: "3",
+      key: "Homeowners",
       label: "For Homeowners",
       children: (
         <section>
@@ -253,7 +253,7 @@ const Products = () => {
       ),
     },
     {
-      key: "4",
+      key: "Enterpreneurs",
       label: "For Enterpreneurs",
       children: (
         <section>
@@ -283,7 +283,7 @@ const Products = () => {
       ),
     },
     {
-      key: "5",
+      key: "Contractors",
       label: "For Contractors",
       children: (
         <section>
@@ -314,6 +314,15 @@ const Products = () => {
     },
   ];
   const onChange = () => {};
+  const location = useLocation();
+  useEffect(() => {
+    document.title = `${
+      location.pathname.replace("/products/", "")
+      // .charAt(0)
+      // .toUpperCase() + location.pathname.slice(2, -2)
+    }
+       - Lifestone`;
+  }, [location]);
   return (
     <main className="about-main">
       <Navbar white />

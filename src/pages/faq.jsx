@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/navbar";
 import "../styles/pages/faq.css";
 import { H2, H3, H4 } from "../helper/heading";
 import { P3 } from "../helper/paragraph";
 import { PlusOutlined, MinusOutlined } from "@ant-design/icons";
 import Footer from "../components/footer";
+import { useLocation } from "react-router-dom";
 
 const Faq = () => {
   const data = [];
@@ -314,6 +315,13 @@ const Faq = () => {
       setOpen(index);
     }
   };
+  const location = useLocation();
+  useEffect(() => {
+    document.title = `${location.pathname
+      .replace("/", "")
+      .charAt(0)
+      .toUpperCase() + location.pathname.slice(2)} - Lifestone`;
+  }, [location]);
   return (
     <main className="faq-main">
       <Navbar white />

@@ -30,7 +30,7 @@ const ProductWithDetailCard = ({
           text="Read More"
           onClick={() => {
             if (product) {
-              navigate(`/product/${product}`);
+              navigate(`/product/${product.replace(/\s+/g, "-")}`);
             }
           }}
         />

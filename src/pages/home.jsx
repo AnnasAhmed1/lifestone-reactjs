@@ -54,7 +54,7 @@ const Home = () => {
   };
   const products = [
     {
-      title: "For \nFabricators",
+      title: "For Fabricators",
     },
     {
       title: "For Architects",
@@ -131,7 +131,7 @@ const Home = () => {
           {products?.map((product, index) => {
             return (
               <Link
-                to={`/products/${index + 1}`}
+                to={`/products/${product.title.replace("For ", "")}`}
                 className="home-product-card container1"
                 key={index}
               >

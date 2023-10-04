@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import emailjs from "emailjs-com";
@@ -7,6 +7,7 @@ import { Modal } from "antd";
 import { H1, H2 } from "../helper/heading";
 import { CheckOutlined, LoadingOutlined } from "@ant-design/icons";
 import { Spin } from "antd";
+import { useLocation } from "react-router-dom";
 // const antIcon = ;
 
 const Contact = () => {
@@ -55,6 +56,13 @@ const Contact = () => {
   const handleInput = (setState, state) => {
     setState(state);
   };
+  const location = useLocation();
+  useEffect(() => {
+    document.title = `${location.pathname
+      .replace("/", "")
+      .charAt(0)
+      .toUpperCase() + location.pathname.slice(2)} - Lifestone`;
+  }, [location]);
 
   return (
     <main className="contact-main">

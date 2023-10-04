@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/pages/test.css";
 import {
   AppleOutlined,
@@ -11,9 +11,17 @@ import {
 } from "@ant-design/icons";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
+import { useLocation } from "react-router-dom";
 
 const Login = () => {
   const [active, setActive] = useState(false);
+  const location = useLocation();
+  useEffect(() => {
+    document.title = `${location.pathname
+      .replace("/", "")
+      .charAt(0)
+      .toUpperCase() + location.pathname.slice(2)} - Lifestone`;
+  }, [location]);
   return (
     <>
       <Navbar

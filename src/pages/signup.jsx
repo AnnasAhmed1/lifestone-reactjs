@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/pages/login.css";
 import {
   UserOutlined,
@@ -6,10 +6,17 @@ import {
   RightOutlined,
   PhoneOutlined,
 } from "@ant-design/icons";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  useEffect(() => {
+    document.title = `${location.pathname
+      .replace("/", "")
+      .charAt(0)
+      .toUpperCase() + location.pathname.slice(2)} - Lifestone`;
+  }, [location]);
   return (
     <div class="login-main">
       <div class="screen">

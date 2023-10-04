@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { H1, H2, H3, H4 } from "../helper/heading";
 import { P2, P3, P4 } from "../helper/paragraph";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 
 const ProductDetails = () => {
-  const { productDetail } = useParams();
+  let { productDetail } = useParams();
+  productDetail = productDetail.replace(/-/g, " ");
+
   const compDetails = [
     {
       heading: "Unleash Your Creativity",
@@ -442,6 +444,12 @@ const ProductDetails = () => {
       ],
     },
   };
+  const location = useLocation();
+  useEffect(() => {
+    document.title = `${location.pathname
+      .replace("/product/", "")
+      .replace(/-/g, " ")} - Lifestone`;
+  }, [location]);
   return (
     <>
       <main className="productDetails-main">

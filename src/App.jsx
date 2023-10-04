@@ -16,6 +16,7 @@ import Signup from "./pages/signup";
 import Test from "./pages/text";
 import ProductDetails from "./pages/productDetails";
 import MyBot from "./pages/chtbot";
+import ErrorPage from "./pages/404";
 function App() {
   return (
     <Routes>
@@ -30,6 +31,7 @@ function App() {
       <Route path="/product/:productDetail" element={<ProductDetails />} />
       <Route path="/faq" element={<Faq />} />
       <Route path="/test" element={<Test />} />
+      <Route path="*" element={<ErrorPage />} />
       <Route path="/bot" element={<MyBot />} />
       {/* <Route path="*" element={<NotFound />} /> */}
     </Routes>

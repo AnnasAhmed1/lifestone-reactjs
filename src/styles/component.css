@@ -635,3 +635,18 @@ footer .contact-icons a:hover {
         opacity: 1;
     }
 }
+
+.image_404 {
+    width: 45%;
+}
+
+@media (max-width:768px){
+    .image_404 {
+        width: 70%;
+    } 
+}
+@media (max-width:576px){
+    .image_404 {
+        width: 85%;
+    } 
+}

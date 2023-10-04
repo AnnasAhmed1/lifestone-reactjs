@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../components/navbar";
 import { H1, H2, H3, H4, H5 } from "../helper/heading";
 import "../styles/pages/about.css";
 import { P3 } from "../helper/paragraph";
 import Footer from "../components/footer";
 import TestimonialSlider from "../components/testimonialSlider";
+import { useLocation } from "react-router-dom";
 
 const About = () => {
   const aboutContent = [
@@ -44,6 +45,13 @@ const About = () => {
       image: "leaf_about.jpeg",
     },
   ];
+  const location = useLocation();
+  useEffect(() => {
+    document.title = `${location.pathname
+      .replace("/", "")
+      .charAt(0)
+      .toUpperCase() + location.pathname.slice(2)} - Lifestone`;
+  }, [location]);
   return (
     <main className="about-main">
       <Navbar white />

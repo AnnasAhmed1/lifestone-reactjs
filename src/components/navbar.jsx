@@ -134,7 +134,7 @@ const Navbar = ({ white = false, style = {} }) => {
     },
     {
       label: "PRODUCTS",
-      to: "/products/1",
+      to: "/products/Fabricators",
       navDetail: false,
     },
     {
@@ -214,6 +214,7 @@ const Navbar = ({ white = false, style = {} }) => {
           <div
             style={{
               flex: "1",
+              cursor: "pointer",
             }}
             onClick={() => {
               navigate("/");
@@ -298,6 +299,7 @@ const Navbar = ({ white = false, style = {} }) => {
                 <h1
                   style={{
                     fontSize: "32px",
+                    cursor: "pointer",
                   }}
                   onClick={() => {
                     navigate("/");
