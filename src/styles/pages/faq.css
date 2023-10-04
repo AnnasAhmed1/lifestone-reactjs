@@ -2,36 +2,46 @@
 
 .faq-main .faq-section {
     display: flex;
-    gap: 50px;
+    gap: 20px;
+
 }
+
+
 
 .faq-main li {
     cursor: pointer;
 }
 
 .category {
-    padding: 10px;
+    padding: 15px 30px;
+    /* border-top: 1px solid var(--dark); */
+    border-bottom: 1px dashed var(--dark);
+    /* color: var(--light); */
 }
+
+.category:nth-child(1) {}
 
 .category:hover {
     color: var(--primary);
-    background-color: #f8cece;
+    background-color: var(--light);
 }
 
 .category-active {
     color: var(--primary);
-    background-color: #f8cece;
+    background-color: var(--light);
 }
 
 .faq-main .faq-section .categories-container {
     flex: 1;
-
+    position: sticky;
+    top: 0px;
+    background-color: #ebebeb;
 }
 
 .faq-main .faq-section .categories-container ul {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    /* gap: 10px; */
 
 }
 
@@ -40,6 +50,8 @@
 }
 
 .faq-main .faq-container {
+    max-height: 70vh;
+    overflow: scroll;
     flex: 2;
 }
 
@@ -51,9 +63,54 @@
 
 .question {
     display: flex;
+    align-items: center;
     gap: 20px;
     padding-bottom: 5px;
     padding-top: 5px;
+}
+
+@media(max-width:576px) {
+    .faq-main .faq-section {
+        flex-direction: column;
+    }
+
+    .faq-main .faq-section .categories-container ul {
+        flex-direction: row;
+        /* align-items: center; */
+    }
+
+    .faq-main .faq-section .categories-container ul li {
+        flex: 1;
+        white-space: nowrap;
+    }
+
+    .category {
+        padding: 10px 15px;
+        /* border-right: 1px dashed; */
+        border-bottom: 0px;
+    }
+
+    .faq-main .faq-section .categories-container {
+        padding-bottom: 0px !important;
+        padding-top: 10px !important;
+    }
+
+    .faq-main .faq-section .categories-container>h3 {
+        text-align: center !important;
+        font-size: 23px;
+        padding-bottom: 5px;
+
+    }
+
+    .faq-main .faq-container>div>h3 {
+        text-align: center !important;
+        font-size: 23px;
+        padding-bottom: 5px;
+    }
+
+    .faq-main .faq-container {
+        max-height: 60vh;
+    }
 }
 
 .answer {

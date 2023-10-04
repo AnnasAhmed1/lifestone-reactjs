@@ -50,7 +50,7 @@ const About = () => {
 
       <div
         style={{
-          minHeight: "73px",
+          minHeight: "80px",
           width: "100%",
         }}
       ></div>
@@ -78,14 +78,7 @@ const About = () => {
       </section>
 
       <section className="main-section flex-responsive/ container about-section">
-        <H2
-          text="About Lifestone"
-          center
-          color="primary"
-          style={{
-            marginBottom: "30px",
-          }}
-        />
+        <H2 text="About Lifestone" center color="primary" style={{}} />
         {aboutContent?.map((content, index) => {
           return (
             <div

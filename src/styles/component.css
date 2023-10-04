@@ -1,12 +1,12 @@
 .navbar {
-    padding: 20px 8%;
+    padding: 20px 4%;
     position: fixed;
     top: 0px;
     width: 100%;
     z-index: 2;
     background-color: var(--light);
     border-bottom: 1px solid var(--textPrimary);
-    height: 73px;
+    height: 80px;
 
 }
 
@@ -82,6 +82,11 @@
 @media (max-width:576px) {
     .navbar {
         padding: 10px 3%;
+    }
+
+    .navbar>.navs-container {
+        gap: 6px;
+
     }
 }
 
@@ -244,14 +249,21 @@
     cursor: pointer;
 }
 
+.footer a,
 .footer p,
 .footer div,
 .footer ul {
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
+.footer a,
+.footer p {
+    cursor: pointer;
+
+}
 
 .footer div {
     gap: 30px;
@@ -261,9 +273,10 @@
     gap: 20px;
 }
 
+.footer a,
 .footer p {
     gap: 10px;
-    cursor: text;
+    /* cursor: text; */
 }
 
 footer .contact-icons a {

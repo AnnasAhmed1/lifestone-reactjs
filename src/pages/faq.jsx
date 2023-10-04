@@ -151,47 +151,47 @@ const Faq = () => {
       faq: [
         {
           question:
-            "1. How often will I be billed for my Lifestone Platform subscription?",
+            "How often will I be billed for my Lifestone Platform subscription?",
           answer:
             "You will be billed every six months in advance for your Lifestone Platform subscription.",
         },
 
         {
-          question: "2. What does the upfront payment cover in my bill?",
+          question: "What does the upfront payment cover in my bill?",
           answer:
             "The upfront payment covers the module subscription fee and user license fees for the upcoming six-month period, ensuring uninterrupted access to your chosen modules and user licenses.",
         },
 
         {
           question:
-            "3. What is the purpose of the pre-paid credit balance in my account?",
+            "What is the purpose of the pre-paid credit balance in my account?",
           answer:
             "The pre-paid credit balance in your account offers flexibility. It allows you to cover any additional user license fees that may arise during the six-month billing cycle without immediate billing for additional licenses. Charges for extra user licenses are deducted from this balance.",
         },
 
         {
           question:
-            "4. Can I make decisions about adding more subscriptions or user licenses during the billing cycle?",
+            "Can I make decisions about adding more subscriptions or user licenses during the billing cycle?",
           answer:
             "Yes, you have the freedom to make these decisions as needed. You can add more subscriptions or user licenses during the billing cycle. However, if additional usage significantly affects your pre-paid credit balance, we may adjust the billing cycle accordingly and charge for the next six-month period immediately.",
         },
 
         {
-          question: "5. How can I monitor my pre-paid credit balance?",
+          question: "How can I monitor my pre-paid credit balance?",
           answer:
             "You can monitor your pre-paid credit balance within the Lifestone Platform. The balance updates daily, and user admins have access to view it. Additionally, when 90% of your pre-paid credit is used, you will receive an email reminder.",
         },
 
         {
           question:
-            "6. How can I avoid subscription expiration due to low pre-paid credit?",
+            "How can I avoid subscription expiration due to low pre-paid credit?",
           answer:
             "You can set up auto-renewal within the Lifestone Platform to avoid subscription expiration. Auto-renewal ensures that your subscription remains active without interruption.",
         },
 
         {
           question:
-            "7. What happens if I have questions or need clarification about the billing policy?",
+            "What happens if I have questions or need clarification about the billing policy?",
           answer:
             "If you have any questions or need further clarification regarding our billing policy, please reach out to our dedicated support team. They are available to assist you with any inquiries you may have.",
         },
@@ -320,65 +320,124 @@ const Faq = () => {
 
       <div
         style={{
-          minHeight: "73px",
+          minHeight: "80px",
           width: "100%",
         }}
       ></div>
-      <section className="container main-section faq-section">
-        <div className="categories-container">
-          <H3 text="Categories" />
-          <ul>
-            {categories?.map((category, index) => {
-              return (
-                <li
-                  onClick={() => {
-                    handleActive(index);
-                  }}
-                  key={index}
-                  className={`category ${
-                    active === index ? "category-active" : null
-                  }`}
-                >
-                  {category.label}
-                </li>
-              );
-            })}
-          </ul>
+      <div className="container main-section">
+        <div>
+          <H2
+            text="Frequently Asked Question"
+            center
+            color="primary"
+            style={{
+              marginBottom: "30px",
+            }}
+          />
+          <P3 text="" />
         </div>
-        <div className="faq-container">
-          <div>
-            <H2 text="Frequently Asked Question" />
-            <P3 text="" />
-          </div>
-          <div>
-            <H3 text={categories[active].label} />
+        <section className="container main-section/ faq-section">
+          <div
+            className="categories-container"
+            style={{
+              boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
+              borderRadius: "5px",
+              padding: "20px 0px",
+            }}
+          >
+            <H3
+              text="Categories"
+              style={{
+                paddingLeft: "20px",
+                borderBottom: "1px solid var(--dark)",
+              }}
+            />
             <ul>
-              {categories[active]?.faq?.map((faq, index) => {
+              {categories?.map((category, index) => {
                 return (
-                  <li key={index}>
-                    <p
-                      className="question"
-                      onClick={() => {
-                        handleOpen(index);
-                      }}
-                    >
-                      {open === index ? <MinusOutlined /> : <PlusOutlined />}
-                      {faq.question}
-                    </p>
-                    <p
-                      className={`answer ${
-                        open === index ? "faq-active" : null
-                      }`}
-                    >
-                      {faq.answer}
-                    </p>
+                  <li
+                    onClick={() => {
+                      handleActive(index);
+                    }}
+                    key={index}
+                    className={`category ${
+                      active === index ? "category-active" : null
+                    }`}
+                  >
+                    {category.label}
                   </li>
                 );
               })}
             </ul>
           </div>
-        </div>
-      </section>
+          <div
+            className="faq-container"
+            style={{
+              boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
+              padding: "0 20px",
+            }}
+          >
+            {/* <div
+            style={{
+              position: "sticky",
+              top: "0px",
+              zIndex: "2",
+              backgroundColor: "var(--light)",
+            }}
+          >
+            <H2
+              text="Frequently Asked Question"
+              style={{
+                paddingTop: "20px",
+              }}
+            />
+            <P3 text="" />
+          </div> */}
+            <div>
+              <H3
+                text={categories[active].label}
+                color="primary"
+                style={{
+                  position: "sticky",
+                  top: "70px",
+                  zIndex: "",
+                  backgroundColor: "var(--light)",
+                  position: "sticky",
+                  top: "0px",
+                  zIndex: "1.5",
+                  backgroundColor: "var(--light)",
+                  borderBottom: "1px solid black",
+                  paddingTop: "20px",
+                }}
+              />
+              <ul>
+                {categories[active]?.faq?.map((faq, index) => {
+                  return (
+                    <li key={index}>
+                      <p
+                        className="question"
+                        onClick={() => {
+                          handleOpen(index);
+                        }}
+                      >
+                        {open === index ? <MinusOutlined /> : <PlusOutlined />}
+                        {faq.question}
+                      </p>
+                      <p
+                        className={`answer ${
+                          open === index ? "faq-active" : null
+                        }`}
+                      >
+                        {faq.answer}
+                      </p>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
       <Footer />
     </main>
   );

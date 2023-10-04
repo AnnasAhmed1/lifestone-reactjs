@@ -14,7 +14,6 @@
 .about-main .about-head>div {
     display: flex;
     align-items: center;
-
 }
 
 .about-main .about-head>div>h5,
@@ -47,6 +46,18 @@
 
     .about-main .about-head>div>.image img {
         height: 350px;
+        width: 80%;
+        display: block;
+        margin-left: auto;
+
+    }
+
+    .about-main .about-head>div>.image {
+        width: 100%;
+    }
+
+    .about-main .about-head>div {
+        align-items: flex-start;
     }
 }
 
@@ -79,7 +90,21 @@
 @media (max-width:768px) {
     .about-main .about-section>div:nth-child(2) {
         flex: 2;
+        /* width: 60%; */
+    }
+
+    .about-main .about-section>div img {
+        width: 70%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .about-main .about-section>div:nth-child(2) img {
         width: 60%;
+    }
+
+    .about-main .about-section>div {
+        margin: 0;
     }
 }
 

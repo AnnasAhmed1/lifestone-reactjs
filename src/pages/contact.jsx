@@ -61,7 +61,7 @@ const Contact = () => {
       <Navbar white />
       <div
         style={{
-          minHeight: "73px",
+          minHeight: "80px",
           width: "100%",
         }}
       ></div>

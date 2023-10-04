@@ -1,4 +1,4 @@
-import { Dropdown, Menu } from "antd";
+import { Drawer, Dropdown, Menu } from "antd";
 import React, { useEffect, useState } from "react";
 import ButtonComp from "../helper/button";
 import {
@@ -8,14 +8,14 @@ import {
   CloseOutlined,
 } from "@ant-design/icons";
 import "../styles/component.css";
-import { H3, H4 } from "../helper/heading";
+import { H2, H3, H4 } from "../helper/heading";
 import { Link, useNavigate } from "react-router-dom";
 
 // import type { MenuProps } from 'antd';
 
 const Navbar = ({ white = false, style = {} }) => {
   const [isScrolled, setIsScrolled] = useState(white);
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
   const [active, setActive] = useState("home");
   const [inputActive, setInputActive] = useState(false);
   useEffect(() => {
@@ -108,6 +108,15 @@ const Navbar = ({ white = false, style = {} }) => {
     setActive(nav);
   };
   const [current, setCurrent] = useState("mail");
+  const [open, setOpen] = useState(false);
+
+  const showDrawer = () => {
+    setOpen(true);
+  };
+  const onClose = () => {
+    setOpen(false);
+  };
+  const [anchorEl, setAnchorEl] = useState(null);
   const onClick = (e) => {
     console.log("click ", e);
     setCurrent(e.key);
@@ -153,6 +162,45 @@ const Navbar = ({ white = false, style = {} }) => {
         }`}
         style={style}
       >
+        <Drawer
+          placement={"top"}
+          closable={false}
+          onClose={onClose}
+          open={open}
+          key={"top"}
+          height={"auto"}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <div className="container main-section">
+            {/* <H2 text="Search" /> */}
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                onClose();
+              }}
+              style={{
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <input
+                style={{
+                  height: "auto",
+                  width: "100%",
+                  padding: "15px 25px",
+                  border: "1px solid black",
+                }}
+                type="text"
+                placeholder="Write something to search..."
+              />
+              <ButtonComp text="Search" hover={false} />
+            </form>
+          </div>
+        </Drawer>
         {/* <ul>
           <li>Media</li>
           <li className="circle"></li>
@@ -163,7 +211,14 @@ const Navbar = ({ white = false, style = {} }) => {
           <li>Hospitality Jobs</li>
         </ul> */}
         <div className="navs-container">
-          <div>
+          <div
+            style={{
+              flex: "1",
+            }}
+            onClick={() => {
+              navigate("/");
+            }}
+          >
             <h1
               style={{
                 fontSize: "32px",
@@ -175,6 +230,7 @@ const Navbar = ({ white = false, style = {} }) => {
               style={{
                 fontSize: "12px",
                 color: !isScrolled ? "#d7d7d7" : "#555555",
+                whiteSpace: "nowrap",
               }}
             >
               <span className="red-text">INN</span>OTECH MANAGEMENT INC.
@@ -190,108 +246,121 @@ const Navbar = ({ white = false, style = {} }) => {
                     handleNavDetail("THINGS TO DO", things);
                   }}
                 >
-                  <Link to={nav.to}>{nav.label}</Link>
+                  <Link
+                    style={{
+                      whiteSpace: "nowrap",
+                    }}
+                    to={nav.to}
+                  >
+                    {nav.label}
+                  </Link>
                   {/* <CaretDownOutlined /> */}
                 </li>
               );
             })}
           </ul>
-          <ButtonComp
-            text="Login"
-            onClick={() => {
-              navigate("/login");
-            }}
-          />
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-            }}
-            className="navbar-form"
-          >
-            <input
-              type="text"
-              placeholder="Search"
-              placeholderColor="#ffffff"
-              className={`${inputActive ? "input-active" : null}`}
-            />
-            <button
+          <>
+            <ButtonComp
+              text="Login"
               onClick={() => {
-                setInputActive(!inputActive);
+                navigate("/login");
               }}
+            />
+            {/* <form
+              onSubmit={(e) => {
+                e.preventDefault();
+              }}
+              className="navbar-form"
+            >
+              <input
+                type="text"
+                placeholder="Search"
+                placeholderColor="#ffffff"
+                className={`${inputActive ? "input-active" : null}`}
+              /> */}
+            <button
+              // onClick={() => {
+              //   setInputActive(!inputActive);
+              // }}
+              onClick={showDrawer}
               className="icon-button"
             >
               <SearchOutlined />
             </button>
-          </form>
+            {/* </form> */}
 
-          <div
-            className={`active-mobile-nav ${
-              mobileNav ? "active-mobile-nav-activated" : null
-            }`}
-          >
-            <div>
-              <h1
-                style={{
-                  fontSize: "32px",
-                }}
-              >
-                Lifestone
-              </h1>
-              <p
-                style={{
-                  fontSize: "12px",
-                  color: !isScrolled ? "#d7d7d7" : "#555555",
-                }}
-              >
-                <span className="red-text">INN</span>OTECH MANAGEMENT INC.
-              </p>
-              <button
-                style={{
-                  color: "#ffffff",
-                  fontSize: "24px",
-                  position: "absolute",
-                  right: "20px",
-                  top: "20px",
-                }}
-                onClick={() => {
-                  setMobileNav(false);
-                }}
-              >
-                <CloseOutlined />
-              </button>
+            <div
+              className={`active-mobile-nav ${
+                mobileNav ? "active-mobile-nav-activated" : null
+              }`}
+            >
+              <div>
+                <h1
+                  style={{
+                    fontSize: "32px",
+                  }}
+                  onClick={() => {
+                    navigate("/");
+                    setMobileNav(false);
+                  }}
+                >
+                  Lifestone
+                </h1>
+                <p
+                  style={{
+                    fontSize: "12px",
+                    color: !isScrolled ? "#d7d7d7" : "#555555",
+                  }}
+                >
+                  <span className="red-text">INN</span>OTECH MANAGEMENT INC.
+                </p>
+                <button
+                  style={{
+                    color: "#ffffff",
+                    fontSize: "24px",
+                    position: "absolute",
+                    right: "20px",
+                    top: "20px",
+                  }}
+                  onClick={() => {
+                    setMobileNav(false);
+                  }}
+                >
+                  <CloseOutlined />
+                </button>
+              </div>
+              <ul className="">
+                {navs?.map((nav, index) => {
+                  return (
+                    <li
+                      key={index}
+                      className="helper-p5"
+                      onClick={() => {
+                        handleNavDetail("THINGS TO DO", things);
+                        setMobileNav(false);
+                      }}
+                    >
+                      <Link to={nav.to}>{nav.label}</Link>
+                      {/* <CaretDownOutlined /> */}
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
-            <ul className="">
-              {navs?.map((nav, index) => {
-                return (
-                  <li
-                    key={index}
-                    className="helper-p5"
-                    onClick={() => {
-                      handleNavDetail("THINGS TO DO", things);
-                      setMobileNav(false);
-                    }}
-                  >
-                    <Link to={nav.to}>{nav.label}</Link>
-                    {/* <CaretDownOutlined /> */}
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
 
-          <button
-            className="show-tablet"
-            onClick={() => {
-              setMobileNav(true);
-            }}
-          >
-            <MenuOutlined
-              style={{
-                fontSize: "20px",
+            <button
+              className="show-tablet"
+              onClick={() => {
+                setMobileNav(true);
               }}
-            />
-          </button>
-          {/* <Dropdown
+            >
+              <MenuOutlined
+                style={{
+                  fontSize: "20px",
+                }}
+              />
+            </button>
+            {/* <Dropdown
             menu={{
               items,
             }}
@@ -307,9 +376,10 @@ const Navbar = ({ white = false, style = {} }) => {
               />
             </button>
           </Dropdown> */}
+          </>
         </div>
 
-        <div className={`nav-detail main-section ${open ? "visible" : null}`}>
+        {/* <div className={`nav-detail main-section ${open ? "visible" : null}`}>
           <div>
             <H4 text={navDetail.heading} />
             {navDetail.headingData?.map((v, i) => {
@@ -365,7 +435,7 @@ const Navbar = ({ white = false, style = {} }) => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </nav>
     </>
   );

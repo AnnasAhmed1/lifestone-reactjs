@@ -40,14 +40,14 @@ const Footer = () => {
   return (
     <footer className="footer main-section">
       <div>
-        <p className="helper-p5">
+        <a className="helper-p5" href="mailto:info@lifestone.ca">
           <MailOutlined />
           info@lifestone.ca
-        </p>
-        <p className="helper-p5">
+        </a>
+        <Link className="helper-p5" to="tel:+920000000000">
           <PhoneOutlined />
           778.883.5476
-        </p>
+        </Link>
       </div>
       <ul>
         {navs?.map((nav, index) => {
