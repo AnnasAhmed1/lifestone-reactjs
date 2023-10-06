@@ -1,5 +1,4 @@
 import React from "react";
-import { P1 } from "../helper/paragraph";
 import { H3 } from "../helper/heading";
 
 const ProductCard = ({ bgImage = "" }) => {

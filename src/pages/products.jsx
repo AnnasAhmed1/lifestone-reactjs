@@ -168,7 +168,6 @@ const Products = () => {
       children: (
         <section>
           {products.fabricators?.map((product, index) => {
-            console.log(product, "producctt");
             return (
               <ProductWithDetailCard
                 key={index}
@@ -198,7 +197,6 @@ const Products = () => {
       children: (
         <section>
           {products.architects?.map((product, index) => {
-            console.log(pruductsDetails[product]);
             return (
               <ProductWithDetailCard
                 key={index}
@@ -228,7 +226,6 @@ const Products = () => {
       children: (
         <section>
           {products.homeOwners?.map((product, index) => {
-            console.log(pruductsDetails[product]);
             return (
               <ProductWithDetailCard
                 key={index}
@@ -258,7 +255,6 @@ const Products = () => {
       children: (
         <section>
           {products.enterpreneurs?.map((product, index) => {
-            console.log(pruductsDetails[product]);
             return (
               <ProductWithDetailCard
                 key={index}
@@ -288,7 +284,6 @@ const Products = () => {
       children: (
         <section>
           {products.contractors?.map((product, index) => {
-            console.log(pruductsDetails[product]);
             return (
               <ProductWithDetailCard
                 key={index}

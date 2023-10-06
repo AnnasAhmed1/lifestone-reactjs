@@ -1,22 +1,15 @@
-import { Drawer, Dropdown, Menu } from "antd";
+import { CloseOutlined, MenuOutlined, SearchOutlined } from "@ant-design/icons";
 import React, { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import ButtonComp from "../helper/button";
-import {
-  CaretDownOutlined,
-  SearchOutlined,
-  MenuOutlined,
-  CloseOutlined,
-} from "@ant-design/icons";
 import "../styles/component.css";
-import { H2, H3, H4 } from "../helper/heading";
-import { Link, useNavigate } from "react-router-dom";
 
 // import type { MenuProps } from 'antd';
 
 const Navbar = ({ white = false, style = {} }) => {
   const [isScrolled, setIsScrolled] = useState(white);
   // const [open, setOpen] = useState(false);
-  const [active, setActive] = useState("home");
+  const [active, setActive] = useState();
   const [inputActive, setInputActive] = useState(false);
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -102,25 +95,10 @@ const Navbar = ({ white = false, style = {} }) => {
     //   setOpen(false);
     //   setOpen(true);
     // }
-    console.log(open);
   };
-  const handleNavActive = (nav) => {
-    setActive(nav);
-  };
-  const [current, setCurrent] = useState("mail");
+
   const [open, setOpen] = useState(false);
 
-  const showDrawer = () => {
-    setOpen(true);
-  };
-  const onClose = () => {
-    setOpen(false);
-  };
-  const [anchorEl, setAnchorEl] = useState(null);
-  const onClick = (e) => {
-    console.log("click ", e);
-    setCurrent(e.key);
-  };
   const navs = [
     {
       label: "HOME",
@@ -154,6 +132,7 @@ const Navbar = ({ white = false, style = {} }) => {
   });
   const navigate = useNavigate();
   const [mobileNav, setMobileNav] = useState(false);
+  const location = useLocation();
   return (
     <>
       <nav
@@ -162,54 +141,6 @@ const Navbar = ({ white = false, style = {} }) => {
         }`}
         style={style}
       >
-        <Drawer
-          placement={"top"}
-          closable={false}
-          onClose={onClose}
-          open={open}
-          key={"top"}
-          height={"auto"}
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <div className="container main-section">
-            {/* <H2 text="Search" /> */}
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                onClose();
-              }}
-              style={{
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
-              <input
-                style={{
-                  height: "auto",
-                  width: "100%",
-                  padding: "15px 25px",
-                  border: "1px solid black",
-                }}
-                type="text"
-                placeholder="Write something to search..."
-              />
-              <ButtonComp text="Search" hover={false} />
-            </form>
-          </div>
-        </Drawer>
-        {/* <ul>
-          <li>Media</li>
-          <li className="circle"></li>
-          <li> Meetings</li>
-          <li className="circle"></li>
-          <li>visitPA.com</li>
-          <li className="circle"></li>
-          <li>Hospitality Jobs</li>
-        </ul> */}
         <div className="navs-container">
           <div
             style={{
@@ -243,19 +174,26 @@ const Navbar = ({ white = false, style = {} }) => {
                 <li
                   key={index}
                   className="helper-p5"
-                  onClick={() => {
-                    handleNavDetail("THINGS TO DO", things);
-                  }}
+                  style={{}}
+                  // onClick={() => {
+                  //   handleNavDetail("THINGS TO DO", things);
+                  // }}
                 >
                   <Link
                     style={{
                       whiteSpace: "nowrap",
+                      color:
+                        location.pathname.includes("product") &&
+                        nav.to.includes("product")
+                          ? "var(--primary)"
+                          : location.pathname === nav.to
+                          ? "var(--primary)"
+                          : null,
                     }}
                     to={nav.to}
                   >
                     {nav.label}
                   </Link>
-                  {/* <CaretDownOutlined /> */}
                 </li>
               );
             })}
@@ -267,7 +205,7 @@ const Navbar = ({ white = false, style = {} }) => {
                 navigate("/login");
               }}
             />
-            {/* <form
+            <form
               onSubmit={(e) => {
                 e.preventDefault();
               }}
@@ -278,17 +216,16 @@ const Navbar = ({ white = false, style = {} }) => {
                 placeholder="Search"
                 placeholderColor="#ffffff"
                 className={`${inputActive ? "input-active" : null}`}
-              /> */}
-            <button
-              // onClick={() => {
-              //   setInputActive(!inputActive);
-              // }}
-              onClick={showDrawer}
-              className="icon-button"
-            >
-              <SearchOutlined />
-            </button>
-            {/* </form> */}
+              />
+              <button
+                onClick={() => {
+                  setInputActive(!inputActive);
+                }}
+                className="icon-button"
+              >
+                <SearchOutlined />
+              </button>
+            </form>
 
             <div
               className={`active-mobile-nav ${
@@ -343,7 +280,6 @@ const Navbar = ({ white = false, style = {} }) => {
                       }}
                     >
                       <Link to={nav.to}>{nav.label}</Link>
-                      {/* <CaretDownOutlined /> */}
                     </li>
                   );
                 })}

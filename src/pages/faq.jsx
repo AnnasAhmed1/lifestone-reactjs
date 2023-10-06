@@ -1,11 +1,11 @@
+import { MinusOutlined, PlusOutlined } from "@ant-design/icons";
 import React, { useEffect, useState } from "react";
-import Navbar from "../components/navbar";
-import "../styles/pages/faq.css";
-import { H2, H3, H4 } from "../helper/heading";
-import { P3 } from "../helper/paragraph";
-import { PlusOutlined, MinusOutlined } from "@ant-design/icons";
-import Footer from "../components/footer";
 import { useLocation } from "react-router-dom";
+import Footer from "../components/footer";
+import Navbar from "../components/navbar";
+import { H2, H3 } from "../helper/heading";
+import { P3 } from "../helper/paragraph";
+import "../styles/pages/faq.css";
 
 const Faq = () => {
   const data = [];
@@ -406,10 +406,6 @@ const Faq = () => {
                 text={categories[active].label}
                 color="primary"
                 style={{
-                  position: "sticky",
-                  top: "70px",
-                  zIndex: "",
-                  backgroundColor: "var(--light)",
                   position: "sticky",
                   top: "0px",
                   zIndex: "1.5",

@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import { H1, H2, H3, H4 } from "../helper/heading";
-import { P2, P3, P4 } from "../helper/paragraph";
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
 import { useLocation, useParams } from "react-router-dom";
+import Footer from "../components/footer";
+import Navbar from "../components/navbar";
+import { H3, H4 } from "../helper/heading";
+import { P2, P3, P4 } from "../helper/paragraph";
 
 const ProductDetails = () => {
   let { productDetail } = useParams();

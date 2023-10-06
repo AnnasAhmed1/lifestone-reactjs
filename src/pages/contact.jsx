@@ -1,14 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
-import emailjs from "emailjs-com";
-import "../styles/pages/contact.css";
-import { Modal } from "antd";
-import { H1, H2 } from "../helper/heading";
 import { CheckOutlined, LoadingOutlined } from "@ant-design/icons";
-import { Spin } from "antd";
+import { Modal, Spin } from "antd";
+import emailjs from "emailjs-com";
+import React, { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
-// const antIcon = ;
+import Footer from "../components/footer";
+import Navbar from "../components/navbar";
+import { H2 } from "../helper/heading";
+import "../styles/pages/contact.css";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -44,7 +42,6 @@ const Contact = () => {
           setTimeout(() => {
             setIsModalOpen(false);
           }, 3000);
-          console.log(result.text);
         },
         (error) => {
           setLoading(false);

@@ -61,20 +61,15 @@ function PortfolioSlider() {
         setActiveSlide(e.realIndex);
       }}
       modules={[EffectCoverflow, Pagination, Navigation]}
-      onSwiper={(swiper) => console.log(swiper)}
-      // onSlideChange={(slide) => {
-      //   setActiveSlide(slide.activeIndex);
-      //   console.log("slide change", slide.activeIndex);
-      // }}
       className="swiper_container"
     >
       {portfolioData?.map((portfolio, index) => {
         return (
           <SwiperSlide key={index}>
             <div
-              className={`portfolio_slide ${
-                activeSlide == index ? "active_slide" : null
-              }`}
+              className={`portfolio_slide ${(activeSlide = index
+                ? "active_slide"
+                : null)}`}
             >
               <img
                 src={require(`../assets/portfolio_images/${portfolio.image3}.jpeg`)}
