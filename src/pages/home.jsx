@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../components/navbar";
-import { H1, H2, H3, H4, H5 } from "../helper/heading";
-import "../styles/pages/home.css";
-import SimpleSlider from "../components/productSlider";
-import IconDetail from "../components/iconDetail";
-import TestimonialSlider from "../components/testimonialSlider";
-import Footer from "../components/footer";
-import { P2 } from "../helper/paragraph";
 import { Link } from "react-router-dom";
+import Footer from "../components/footer";
+import Navbar from "../components/navbar";
+import { H1, H2, H4 } from "../helper/heading";
+import { P2 } from "../helper/paragraph";
+import "../styles/pages/home.css";
 
 const Home = () => {
   const [opacity, setOpacity] = useState(1);

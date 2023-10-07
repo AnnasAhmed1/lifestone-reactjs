@@ -4,12 +4,9 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import ButtonComp from "../helper/button";
 import "../styles/component.css";
 
-// import type { MenuProps } from 'antd';
-
 const Navbar = ({ white = false, style = {} }) => {
   const [isScrolled, setIsScrolled] = useState(white);
-  // const [open, setOpen] = useState(false);
-  const [active, setActive] = useState();
+  const [active, setActive] = useState("home");
   const [inputActive, setInputActive] = useState(false);
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -97,8 +94,6 @@ const Navbar = ({ white = false, style = {} }) => {
     // }
   };
 
-  const [open, setOpen] = useState(false);
-
   const navs = [
     {
       label: "HOME",
@@ -136,9 +131,7 @@ const Navbar = ({ white = false, style = {} }) => {
   return (
     <>
       <nav
-        className={`relative navbar ${
-          !isScrolled || mobileNav ? "white-nav" : null
-        }`}
+        className={`navbar ${!isScrolled || mobileNav ? "white-nav" : null}`}
         style={style}
       >
         <div className="navs-container">
@@ -174,7 +167,7 @@ const Navbar = ({ white = false, style = {} }) => {
                 <li
                   key={index}
                   className="helper-p5"
-                  style={{}}
+                  onClick={() => {}}
                   // onClick={() => {
                   //   handleNavDetail("THINGS TO DO", things);
                   // }}
@@ -205,7 +198,7 @@ const Navbar = ({ white = false, style = {} }) => {
                 navigate("/login");
               }}
             />
-            <form
+            {/* <form
               onSubmit={(e) => {
                 e.preventDefault();
               }}
@@ -225,7 +218,7 @@ const Navbar = ({ white = false, style = {} }) => {
               >
                 <SearchOutlined />
               </button>
-            </form>
+            </form> */}
 
             <div
               className={`active-mobile-nav ${

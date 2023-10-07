@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { H3, H4 } from "../helper/heading";
+import { H4 } from "../helper/heading";
 import { P4 } from "../helper/paragraph";
 import { useNavigate } from "react-router-dom";
-import { Drawer } from "antd";
 import ButtonComp from "../helper/button";
 
 const ProductWithDetailCard = ({
@@ -25,7 +24,7 @@ const ProductWithDetailCard = ({
   };
   function Container({ isOpen }) {
     return (
-      <div className={`productContainer ${isOpen ? "opened" : "closed"}`}>
+      <div className={`productContainer ${"opened"}`}>
         <ButtonComp
           text="Read More"
           onClick={() => {
@@ -78,6 +77,7 @@ const ProductWithDetailCard = ({
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            // justifyContent: "center",
           }}
         >
           <P4
@@ -86,8 +86,8 @@ const ProductWithDetailCard = ({
               color: "#878585",
             }}
           />
-          {isHovered && <Container isOpen={isHovered} />}
         </div>
+        {<Container isOpen={isHovered} />}
       </div>
     </>
   );
